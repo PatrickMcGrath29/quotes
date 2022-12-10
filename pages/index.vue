@@ -1,6 +1,6 @@
 <template>
   <Container>
-    <div class="grid gap-x-3 gap-y-8 grid-cols-1 md:grid-cols-3">
+    <div class="grid gap-7 grid-cols-1 md:grid-cols-3">
       <div>
         <div class="card bg-primary hover:bg-opacity-80 bg-base-100 shadow-xl">
           <div class="card-body">
