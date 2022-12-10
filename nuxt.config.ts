@@ -1,3 +1,3 @@
 export default defineNuxtConfig({
-  modules: ["@nuxtjs/tailwindcss"],
+  modules: ["@nuxt/content", "@nuxtjs/tailwindcss"],
 });
