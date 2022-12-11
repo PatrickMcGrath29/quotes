@@ -4,9 +4,9 @@ const quotes = await queryContent("quotes").findOne();
 
 <template>
   <Container>
-    <div class="grid gap-7 grid-cols-1 md:grid-cols-3">
-      <div v-for="quote in quotes.body">
-        <div class="card bg-neutral hover:bg-opacity-80 shadow-xl">
+    <div class="grid grid-flow-row-dense grid-cols-3 grid-rows-3 gap-4">
+      <div v-for="quote in quotes.body" :class="`col-span-${quote.size}`">
+        <div class="bg-neutral hover:bg-opacity-80 shadow-xl rounded-md">
           <div class="card-body">
             <p>
               {{ quote.text }}

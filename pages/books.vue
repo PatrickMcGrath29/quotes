@@ -1,3 +1,3 @@
 <template>
-  <Container> Books aa </Container>
+  <Container> Books </Container>
 </template>
