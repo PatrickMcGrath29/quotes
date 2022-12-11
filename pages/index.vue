@@ -1,5 +1,18 @@
-<script setup>
-const quotes = await queryContent("quotes").findOne();
+<script lang="ts" setup>
+import type { ParsedContent } from "@nuxt/content/dist/runtime/types";
+
+interface Quote extends ParsedContent {
+  text: string;
+  author: string;
+  reference: string;
+  size: Number;
+}
+
+interface Quotes extends ParsedContent {
+  body: Quote[];
+}
+
+const quotes = await queryContent<Quotes>("quotes").findOne();
 </script>
 
 <template>
@@ -15,7 +28,10 @@ const quotes = await queryContent("quotes").findOne();
               {{ quote.text }}
             </p>
             <h4 class="card-title text-base">
-              {{ quote.author }}, {{ quote.reference }}
+              {{ quote.author }}
+            </h4>
+            <h4 class="card-title text-base">
+              {{ quote.reference }}
             </h4>
           </div>
         </div>
