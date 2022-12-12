@@ -28,10 +28,7 @@ const quotes = await queryContent<Quotes>("quotes").findOne();
               {{ quote.text }}
             </p>
             <h4 class="card-title text-base">
-              {{ quote.author }}
-            </h4>
-            <h4 class="card-title text-base">
-              {{ quote.reference }}
+              {{ quote.author }} - {{ quote.reference }}
             </h4>
           </div>
         </div>
