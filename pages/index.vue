@@ -17,19 +17,22 @@ const quotes = await queryContent<Quotes>("quotes").findOne();
 
 <template>
   <Container>
-    <div class="grid grid-cols-1 md:grid-cols-3 grid-flow-row-dense gap-4">
+    <div
+      class="grid grid-cols-1 md:grid-cols-3 grid-flow-row-dense gap-6 mt-4 mb-10"
+    >
       <div
         v-for="quote in quotes.body"
         :class="`max-md:col-auto col-span-${quote.size}`"
       >
-        <div class="bg-neutral hover:bg-opacity-80 shadow-xl rounded-md">
+        <div class="card bg-neutral hover:bg-opacity-80 shadow-xl rounded-md">
           <div class="card-body">
             <p>
               {{ quote.text }}
             </p>
-            <h4 class="card-title text-base">
-              {{ quote.author }} - {{ quote.reference }}
+            <h4 class="card-title text-base pt-4">
+              {{ quote.reference }}
             </h4>
+            <h5 class="text-sm">by {{ quote.author }}</h5>
           </div>
         </div>
       </div>
