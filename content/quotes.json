@@ -1,56 +1,58 @@
-[
-  {
-    "author": "Andrew Murray",
-    "text": "We all know the value of joy. It alone is the proof that what we have really satisfies the heart.",
-    "reference": "Abide in Christ",
-    "size": 1
-  },
-  {
-    "author": "A.W. Tozer",
-    "text": "In our desire after God, let us keep always in mind that God also has a desire, and His desire is toward the sons of men, and more particularly toward those sons of men who will make the once-for-all decision to exalt Him over all. Such as these are precious to God above all treasures of earth or sea. In them God finds a theater where He can display His exceeding kindness toward us in Christ Jesus. With them God can walk unhindered, toward them He can act like the God He is.",
-    "reference": "The Pursuit of God",
-    "size": 2
-  },
-  {
-    "author": "Brother Lawrence",
-    "text": "I do not pray that you may be delivered from your pains; but I pray God earnestly that He would give you strength and patience to bear them as long as He pleases. Comfort yourself with Him who holds you fastened to the cross: He will loose you when He thinks fit. Happy those who suffer with Him: accustom yourself to suffer in that manner, and seek from Him the strength to endure as much, and as long, as He shall judge to be necessary for you.",
-    "reference": "The Practice of the Presence of God",
-    "size": 2
-  },
-  {
-    "author": "Andrew Murray",
-    "text": "With a heart full of joy no work can weary, and no burden can depress; God Himself is strength and song.",
-    "reference": "Abide in Christ",
-    "size": 1
-  },
-  {
-    "author": "Andrew Murray",
-    "text": "There is no proof of the reality of God's love and the blessing He bestows, which men so soon feel the force of, as when the joy of God overcomes all the trials of life.",
-    "reference": "Abide in Christ",
-    "size": 1
-  },
-  {
-    "author": "Andrew Murray",
-    "text": "'As sorrowful yet always rejoicing': these precious golden worlds teach us how the joy of Christ can overrule the sorrow of the world, can make us sing while we weep, and can maintain in the heart, even when cast down by disappointment or difficulties, a deep consciousness of a joy that is unspeakable and full of glory. There is but one condition: 'I will see you again, and your heart shall rejoice, and your joy shall no man take from you'. The presence of Jesus, distinctly manifested, cannot but give joy.",
-    "reference": "Abide in Christ",
-    "size": 2
-  },
-  {
-    "author": "A.W. Tozer",
-    "text": "This is definitely not the hour when men take kindly to an exhortation to listen, for listening is not today a part of popular religion. We are at the opposite end of the pole from there. Religion has accepted the monstrous heresy that noise, size, activity and bluster make a man dear to God. But we may take heart. To a people caught in the tempest of the last great conflict God says, “Be still, and know that I am God,” and still He says it, as if He means to tell us that our strength and safety lie not in noise but in silence.",
-    "reference": "The Pursuit of God",
-    "size": 2
-  },
-  {
-    "author": "A.W. Tozer",
-    "text": "Right now we are in an age of religious complexity. The simplicity which is in Christ is rarely found among us. In its stead are programs, methods, organizations and a world of nervous activities which occupy time and attention but can never satisfy the longing of the heart.",
-    "reference": "The Pursuit of God",
-    "size": 1
-  },
-  {
-    "author": "Andrew Murray",
-    "text": "The blessings He bestows are all connected with His 'Come to Me', and are only to be enjoyed in close fellowship with Himself.",
-    "reference": "Abide in Christ",
-    "size": 1
-  }
-]
+{
+  "quotes": [
+    {
+      "author": "Andrew Murray",
+      "text": "We all know the value of joy. It alone is the proof that what we have really satisfies the heart.",
+      "reference": "Abide in Christ",
+      "size": 1
+    },
+    {
+      "author": "A.W. Tozer",
+      "text": "In our desire after God, let us keep always in mind that God also has a desire, and His desire is toward the sons of men, and more particularly toward those sons of men who will make the once-for-all decision to exalt Him over all. Such as these are precious to God above all treasures of earth or sea. In them God finds a theater where He can display His exceeding kindness toward us in Christ Jesus. With them God can walk unhindered, toward them He can act like the God He is.",
+      "reference": "The Pursuit of God",
+      "size": 2
+    },
+    {
+      "author": "Brother Lawrence",
+      "text": "I do not pray that you may be delivered from your pains; but I pray God earnestly that He would give you strength and patience to bear them as long as He pleases. Comfort yourself with Him who holds you fastened to the cross: He will loose you when He thinks fit. Happy those who suffer with Him: accustom yourself to suffer in that manner, and seek from Him the strength to endure as much, and as long, as He shall judge to be necessary for you.",
+      "reference": "The Practice of the Presence of God",
+      "size": 2
+    },
+    {
+      "author": "Andrew Murray",
+      "text": "With a heart full of joy no work can weary, and no burden can depress; God Himself is strength and song.",
+      "reference": "Abide in Christ",
+      "size": 1
+    },
+    {
+      "author": "Andrew Murray",
+      "text": "There is no proof of the reality of God's love and the blessing He bestows, which men so soon feel the force of, as when the joy of God overcomes all the trials of life.",
+      "reference": "Abide in Christ",
+      "size": 1
+    },
+    {
+      "author": "Andrew Murray",
+      "text": "'As sorrowful yet always rejoicing': these precious golden worlds teach us how the joy of Christ can overrule the sorrow of the world, can make us sing while we weep, and can maintain in the heart, even when cast down by disappointment or difficulties, a deep consciousness of a joy that is unspeakable and full of glory. There is but one condition: 'I will see you again, and your heart shall rejoice, and your joy shall no man take from you'. The presence of Jesus, distinctly manifested, cannot but give joy.",
+      "reference": "Abide in Christ",
+      "size": 2
+    },
+    {
+      "author": "A.W. Tozer",
+      "text": "This is definitely not the hour when men take kindly to an exhortation to listen, for listening is not today a part of popular religion. We are at the opposite end of the pole from there. Religion has accepted the monstrous heresy that noise, size, activity and bluster make a man dear to God. But we may take heart. To a people caught in the tempest of the last great conflict God says, “Be still, and know that I am God,” and still He says it, as if He means to tell us that our strength and safety lie not in noise but in silence.",
+      "reference": "The Pursuit of God",
+      "size": 2
+    },
+    {
+      "author": "A.W. Tozer",
+      "text": "Right now we are in an age of religious complexity. The simplicity which is in Christ is rarely found among us. In its stead are programs, methods, organizations and a world of nervous activities which occupy time and attention but can never satisfy the longing of the heart.",
+      "reference": "The Pursuit of God",
+      "size": 1
+    },
+    {
+      "author": "Andrew Murray",
+      "text": "The blessings He bestows are all connected with His 'Come to Me', and are only to be enjoyed in close fellowship with Himself.",
+      "reference": "Abide in Christ",
+      "size": 1
+    }
+  ]
+}

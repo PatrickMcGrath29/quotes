@@ -9,10 +9,10 @@ interface Quote extends ParsedContent {
 }
 
 interface Quotes extends ParsedContent {
-  body: Quote[];
+  quotes: Quote[];
 }
 
-const quotes = await queryContent<Quotes>("quotes").findOne();
+const { quotes } = await queryContent<Quotes>("quotes").findOne();
 </script>
 
 <template>
@@ -21,10 +21,10 @@ const quotes = await queryContent<Quotes>("quotes").findOne();
       class="grid grid-cols-1 md:grid-cols-3 grid-flow-row-dense gap-6 mt-4 mb-10"
     >
       <div
-        v-for="quote in quotes.body"
+        v-for="quote in quotes"
         :class="`max-md:col-auto col-span-${quote.size}`"
       >
-        <div class="card bg-neutral hover:bg-opacity-80 shadow-xl rounded-md">
+        <div class="card bg-neutral rounded-md">
           <div class="card-body">
             <p>
               {{ quote.text }}
