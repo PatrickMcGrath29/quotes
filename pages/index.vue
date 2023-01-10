@@ -24,7 +24,7 @@ const { quotes } = await queryContent<Quotes>("quotes").findOne();
         v-for="quote in quotes"
         :class="`max-md:col-auto col-span-${quote.size}`"
       >
-        <div class="card bg-neutral rounded-md">
+        <div class="card bg-stone-700 rounded-md">
           <div class="card-body">
             <p>
               {{ quote.text }}
