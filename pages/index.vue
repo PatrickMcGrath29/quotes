@@ -12,16 +12,49 @@ interface Quotes extends ParsedContent {
   quotes: Quote[];
 }
 
-const { quotes } = await queryContent<Quotes>("quotes").findOne();
+const { quotes: allQuotes } = await queryContent<Quotes>("quotes").findOne();
+const references = [
+  "All",
+  ...new Set(allQuotes.map((quote: Quote) => quote.reference)),
+];
+
+const selectedReference = ref();
+const setReference = (reference: string) => {
+  selectedReference.value = reference;
+};
+
+const filteredQuotes = computed(() => {
+  if (
+    selectedReference.value === undefined ||
+    selectedReference.value === "All"
+  ) {
+    return allQuotes;
+  } else {
+    return allQuotes.filter(
+      (quote: Quote) => quote.reference == selectedReference.value
+    );
+  }
+});
 </script>
 
 <template>
   <Container>
+    <div class="my-2">
+      <div class="text-center">
+        <button
+          @click="setReference(reference)"
+          v-for="reference in references"
+          class="px-3 py-2 m-1 rounded-md bg-stone-500"
+        >
+          {{ reference }}
+        </button>
+      </div>
+    </div>
     <div
       class="grid grid-cols-1 md:grid-cols-3 grid-flow-row-dense gap-6 mt-4 mb-10"
     >
       <div
-        v-for="quote in quotes"
+        v-for="quote in filteredQuotes"
         :class="`max-md:col-auto col-span-${quote.size}`"
       >
         <div class="card bg-stone-700 rounded-md">
