@@ -18,16 +18,14 @@ const references = [
   ...new Set(allQuotes.map((quote: Quote) => quote.reference)),
 ];
 
-const selectedReference = ref();
+const ALL_REFERENCES_TAG = "All";
+const selectedReference = ref(ALL_REFERENCES_TAG);
 const setReference = (reference: string) => {
   selectedReference.value = reference;
 };
 
 const filteredQuotes = computed(() => {
-  if (
-    selectedReference.value === undefined ||
-    selectedReference.value === "All"
-  ) {
+  if (selectedReference.value === ALL_REFERENCES_TAG) {
     return allQuotes;
   } else {
     return allQuotes.filter(
@@ -45,6 +43,7 @@ const filteredQuotes = computed(() => {
           @click="setReference(reference)"
           v-for="reference in references"
           class="px-3 py-2 m-1 rounded-md bg-stone-500"
+          :class="{ '!bg-stone-700': reference === selectedReference }"
         >
           {{ reference }}
         </button>
