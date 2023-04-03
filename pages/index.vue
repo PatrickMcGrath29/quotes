@@ -1,37 +1,26 @@
 <script lang="ts" setup>
-import type { ParsedContent } from "@nuxt/content/dist/runtime/types";
+import { Quote } from "~/types";
 
-interface Quote extends ParsedContent {
-  text: string;
-  author: string;
-  reference: string;
-  size: Number;
-}
+const ALL_REFERENCES_TAG = "All";
 
-interface Quotes extends ParsedContent {
-  quotes: Quote[];
-}
+const allQuotes = await useQuotes();
 
-const { quotes: allQuotes } = await queryContent<Quotes>("quotes").findOne();
-const references = [
-  "All",
+const references: string[] = [
+  ALL_REFERENCES_TAG,
   ...new Set(allQuotes.map((quote: Quote) => quote.reference)),
 ];
 
-const ALL_REFERENCES_TAG = "All";
 const selectedReference = ref(ALL_REFERENCES_TAG);
 const setReference = (reference: string) => {
   selectedReference.value = reference;
 };
 
 const filteredQuotes = computed(() => {
-  if (selectedReference.value === ALL_REFERENCES_TAG) {
-    return allQuotes;
-  } else {
-    return allQuotes.filter(
-      (quote: Quote) => quote.reference == selectedReference.value
-    );
-  }
+  return selectedReference.value === ALL_REFERENCES_TAG
+    ? allQuotes
+    : allQuotes.filter(
+        (quote: Quote) => quote.reference == selectedReference.value
+      );
 });
 </script>
 
