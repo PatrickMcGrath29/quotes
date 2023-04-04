@@ -8,6 +8,7 @@ export interface RawQuote {
   text: string;
   author: string;
   reference: string;
+  categories: string[];
 }
 
 export interface Quote {
@@ -15,4 +16,5 @@ export interface Quote {
   author: string;
   reference: string;
   size: Number;
+  categories: string[];
 }

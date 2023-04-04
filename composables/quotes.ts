@@ -10,6 +10,7 @@ const toQuote = (content: any): Quote => {
     reference: content.reference,
     size: computeSize(content.text),
     author: content.author,
+    categories: content.categories,
   };
 };
 
