@@ -47,7 +47,7 @@ const filteredQuotes = computed(() => {
         </div>
         <hr class="border-slate-700" />
         <div>
-          <div class="my-8">Search by Category</div>
+          <div class="my-8">Filter by Category</div>
           <button
             @click="setCategory(category)"
             v-for="category in categories"
@@ -66,7 +66,7 @@ const filteredQuotes = computed(() => {
         v-for="quote in filteredQuotes"
         :class="`max-md:col-auto col-span-${quote.size}`"
       >
-        <div class="card bg-stone-700 rounded-md">
+        <div class="card bg-slate-800 rounded-md">
           <div class="card-body">
             <p>
               {{ quote.text }}
