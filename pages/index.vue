@@ -7,7 +7,7 @@ const allQuotes = await useQuotes();
 
 const categories: string[] = [
   ALL_CATEGORIES_TAG,
-  ...new Set(allQuotes.flatMap((quote: Quote) => quote.categories)),
+  ...new Set(allQuotes.flatMap((quote: Quote) => quote.categories).sort()),
 ];
 
 const selectedCategory = ref(ALL_CATEGORIES_TAG);
