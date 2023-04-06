@@ -29,6 +29,7 @@ const filteredQuotes = computed(() => {
     <div class="mt-6 mb-10 p-3 card rounded-md bg-slate-800">
       <div class="card-body">
         <div class="mb-8">
+          <div class="card-title mb-6 text-2xl">Quotes</div>
           <div class="mb-7">
             God has revealed termendous riches about who He is to faithful men
             and women of the past. This website aims to make some of these
@@ -59,13 +60,8 @@ const filteredQuotes = computed(() => {
         </div>
       </div>
     </div>
-    <div
-      class="grid grid-cols-1 md:grid-cols-3 grid-flow-row-dense gap-6 mt-4 mb-10"
-    >
-      <div
-        v-for="quote in filteredQuotes"
-        :class="`max-md:col-auto col-span-${quote.size}`"
-      >
+    <div class="flex flex-col flex-1 gap-6 mt-4 mb-10">
+      <div v-for="quote in filteredQuotes" :class="`basis-${quote.size}`">
         <div class="card bg-slate-800 rounded-md">
           <div class="card-body">
             <p>
