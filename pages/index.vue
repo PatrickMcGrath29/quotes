@@ -46,16 +46,19 @@ const filteredQuotes = computed(() => {
           </div>
         </div>
         <hr class="border-slate-700" />
-        <div>
-          <div class="my-8">Filter by Category</div>
-          <button
-            @click="setCategory(category)"
-            v-for="category in categories"
-            class="px-3 py-2 m-1 rounded-md bg-slate-600 hover:bg-slate-700 transition-all"
-            :class="{ '!bg-slate-900': category === selectedCategory }"
-          >
-            {{ category }}
-          </button>
+        <div class="collapse collapse-arrow">
+          <input type="checkbox" checked />
+          <div class="collapse-title">Filter by Category</div>
+          <div class="collapse-content">
+            <button
+              @click="setCategory(category)"
+              v-for="category in categories"
+              class="px-3 py-2 m-1 rounded-md bg-slate-600 hover:bg-slate-700 transition-all"
+              :class="{ '!bg-slate-900': category === selectedCategory }"
+            >
+              {{ category }}
+            </button>
+          </div>
         </div>
       </div>
     </div>
