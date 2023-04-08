@@ -47,7 +47,7 @@ const filteredQuotes = computed(() => {
         </div>
         <hr class="border-slate-700" />
         <div class="collapse collapse-arrow">
-          <input type="checkbox" checked />
+          <input type="checkbox" :checked="!useIsSmallScreen().value" />
           <div class="collapse-title">Filter by Category</div>
           <div class="collapse-content">
             <button
