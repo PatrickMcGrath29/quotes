@@ -60,9 +60,9 @@ const filteredQuotes = computed(() => {
         </div>
       </div>
     </div>
-    <div class="flex flex-col flex-1 gap-6 mt-4 mb-10">
-      <div v-for="quote in filteredQuotes" :class="`basis-${quote.size}`">
-        <div class="card bg-slate-800 rounded-md">
+    <div class="flex flex-wrap mt-4 mb-10">
+      <div v-for="quote in filteredQuotes" class="w-full md:w-1/2 xl:w-1/3">
+        <div class="card bg-slate-800 rounded-md m-2">
           <div class="card-body">
             <p>
               {{ quote.text }}
