@@ -1,10 +1,40 @@
 <template>
-  <header>
+  <header class="my-2">
     <Container>
-      <div class="flex items-center py-10 flex-col">
-        <div class="tabs tabs-boxed bg-secondary">
-          <NuxtLink class="tab text-black" to="/">Quotes </NuxtLink>
-          <NuxtLink class="tab text-black" to="/books">Books </NuxtLink>
+      <div class="navbar bg-base-100">
+        <div class="navbar-start">
+          <div class="dropdown">
+            <label tabindex="0" class="btn btn-ghost lg:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
+            </label>
+            <ul
+              tabindex="0"
+              class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+            >
+              <li><NuxtLink>Quotes</NuxtLink></li>
+              <li><NuxtLink>Books</NuxtLink></li>
+            </ul>
+          </div>
+          <a class="btn btn-ghost normal-case text-2xl">Quotes</a>
+        </div>
+        <div class="navbar-end hidden lg:flex">
+          <ul class="menu menu-horizontal px-1">
+            <li><NuxtLink>Quotes</NuxtLink></li>
+            <li><NuxtLink>Books</NuxtLink></li>
+          </ul>
         </div>
       </div>
     </Container>

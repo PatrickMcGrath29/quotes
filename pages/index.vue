@@ -26,10 +26,9 @@ const filteredQuotes = computed(() => {
 
 <template>
   <Container>
-    <div class="mt-6 mb-10 p-3 card rounded-md bg-slate-800">
+    <div class="mb-10 p-3 card rounded-md bg-slate-800">
       <div class="card-body">
         <div class="mb-8">
-          <div class="card-title mb-6 text-2xl">Quotes</div>
           <div class="mb-7">
             God has revealed termendous riches about who He is to faithful men
             and women of the past. This website aims to make some of these
@@ -61,17 +60,18 @@ const filteredQuotes = computed(() => {
       </div>
     </div>
     <div class="columns-sm gap-6 mt-4 mb-10">
-      <div v-for="quote in filteredQuotes" class="inline-block my-2">
-        <div class="card bg-slate-800 rounded-md">
-          <div class="card-body">
-            <p>
-              {{ quote.text }}
-            </p>
-            <h4 class="card-title text-base pt-4">
-              {{ quote.reference }}
-            </h4>
-            <h5 class="text-sm">by {{ quote.author }}</h5>
-          </div>
+      <div
+        v-for="quote in filteredQuotes"
+        class="inline-block my-2 card bg-slate-800 rounded-md"
+      >
+        <div class="card-body">
+          <p>
+            {{ quote.text }}
+          </p>
+          <h4 class="card-title text-base pt-4">
+            {{ quote.reference }}
+          </h4>
+          <h5 class="text-sm">by {{ quote.author }}</h5>
         </div>
       </div>
     </div>
