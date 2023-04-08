@@ -33,8 +33,8 @@ const filteredQuotes = computed(() => {
             God has revealed termendous riches about who He is to faithful men
             and women of the past. This website aims to make some of these
             riches known to more of the body of Christ. May we find
-            encouragement from the saints of the past to press on even further
-            in our walk with Christ.
+            encouragement from the saints of the past, and then press on even
+            further in our walk with Christ.
           </div>
           <div>
             <div class="italic mb-1">
