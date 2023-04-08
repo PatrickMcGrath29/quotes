@@ -1,14 +1,9 @@
-import { Quote, RawQuotes } from "~/types";
-
-const computeSize = (text: string): Number => {
-  return Math.ceil(text.length / 250);
-};
+import { Quote, Quotes } from "~/types";
 
 const toQuote = (content: any): Quote => {
   return {
     text: content.text,
     reference: content.reference,
-    size: computeSize(content.text),
     author: content.author,
     categories: content.categories,
   };
@@ -16,8 +11,8 @@ const toQuote = (content: any): Quote => {
 
 export const useQuotes = async (): Promise<Quote[]> => {
   const { data } = await useAsyncData(() =>
-    queryContent<RawQuotes>("quotes").findOne()
+    queryContent<Quotes>("quotes").findOne()
   );
 
-  return data.value?.quotes.map(toQuote);
+  return data.value?.quotes;
 };
