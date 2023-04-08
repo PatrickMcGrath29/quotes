@@ -24,16 +24,16 @@
               tabindex="0"
               class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
-              <li><NuxtLink>Quotes</NuxtLink></li>
-              <li><NuxtLink>Books</NuxtLink></li>
+              <HeaderItems />
             </ul>
           </div>
-          <a class="btn btn-ghost normal-case text-2xl">Quotes</a>
+          <NuxtLink to="/" class="btn btn-ghost normal-case text-2xl"
+            >Quotes</NuxtLink
+          >
         </div>
         <div class="navbar-end hidden lg:flex">
           <ul class="menu menu-horizontal px-1">
-            <li><NuxtLink>Quotes</NuxtLink></li>
-            <li><NuxtLink>Books</NuxtLink></li>
+            <HeaderItems />
           </ul>
         </div>
       </div>
