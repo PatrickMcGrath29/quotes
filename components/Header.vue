@@ -27,12 +27,12 @@
               <HeaderItems />
             </ul>
           </div>
-          <NuxtLink to="/" class="btn btn-ghost normal-case text-2xl"
-            >Quotes</NuxtLink
-          >
+          <NuxtLink to="/" class="btn btn-ghost normal-case text-2xl">
+            Quotes
+          </NuxtLink>
         </div>
         <div class="navbar-end hidden lg:flex">
-          <ul class="menu menu-horizontal px-1">
+          <ul class="menu menu-horizontal px-1 gap-1">
             <HeaderItems />
           </ul>
         </div>

@@ -62,7 +62,10 @@ const filteredQuotes = computed(() => {
         </div>
       </div>
     </div>
-    <div class="columns-sm gap-6 mt-4 mb-10">
+    <div
+      class="gap-6 mt-4 mb-10"
+      :class="useColumnSettings(filteredQuotes.length)"
+    >
       <div
         v-for="quote in filteredQuotes"
         class="inline-block my-2 card bg-slate-800 rounded-md"
