@@ -47,13 +47,13 @@ const filteredQuotes = computed(() => {
         </div>
         <hr class="border-slate-700" />
         <div class="collapse collapse-arrow">
-          <input type="checkbox" :checked="!useIsSmallScreen().value" />
+          <input type="checkbox" />
           <div class="collapse-title font-semibold">Filter by Category</div>
-          <div class="collapse-content">
+          <div class="collapse-content flex flex-wrap gap-2">
             <button
               @click="setCategory(category)"
               v-for="category in categories"
-              class="px-3 py-2 m-1 rounded-md bg-slate-600 hover:bg-slate-700 transition-all"
+              class="px-2.5 py-1.5 text-base rounded-md bg-slate-600 hover:bg-slate-700 transition-all"
               :class="{ '!bg-slate-900': category === selectedCategory }"
             >
               {{ category }}

@@ -1,5 +1,5 @@
 <template>
-  <div tabindex="0">
+  <div>
     <Header />
     <NuxtPage />
   </div>

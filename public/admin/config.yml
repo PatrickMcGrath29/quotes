@@ -1,0 +1,20 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: static/img
+public_folder: /img
+
+collections:
+  - name: "quote"
+    label: "Quotes"
+    folder: "content/allquotes"
+    format: "frontmatter"
+    create: true
+    slug: "{{author}}-{{reference}}"
+    editor:
+      preview: false
+    fields:
+      - { label: "Text", name: "text", widget: "string" }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Reference", name: "reference", widget: "string" }
