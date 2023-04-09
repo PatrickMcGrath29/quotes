@@ -94,7 +94,7 @@ collections:
     fields:
       - { label: "Unique ID", name: "uuid", widget: uuid }
       - { label: "Reference Name", name: "name", widget: "string" }
-      - { label: "Link", name: "link", widget: "string" }
+      - { label: "Link", name: "link", widget: "string", required: false }
       - {
           label: "Author",
           name: "author",
