@@ -61,7 +61,7 @@ collections:
     folder: "content/categories"
     format: "frontmatter"
     create: true
-    slug: "{{name}}"
+    slug: "{{name}}-{{uuid}}"
     identifier_field: uuid
     summary: "{{name}}"
     editor:
@@ -74,7 +74,7 @@ collections:
     folder: "content/authors"
     format: "frontmatter"
     create: true
-    slug: "{{name}}"
+    slug: "{{name}}-{{uuid}}"
     identifier_field: uuid
     summary: "{{name}}"
     editor:
@@ -87,7 +87,7 @@ collections:
     folder: "content/references"
     format: "frontmatter"
     create: true
-    slug: "{{name}}"
+    slug: "{{name}}-{{uuid}}"
     identifier_field: uuid
     summary: "{{name}}"
     editor:
