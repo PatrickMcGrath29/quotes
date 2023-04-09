@@ -1,20 +1,88 @@
 backend:
   name: git-gateway
   branch: main
+  repo: PatrickMcGrath29/quotes
+  squash_merges: true
+  use_graphql: true
 
-media_folder: static/img
+site_url: https://quotes.thegoodland.io
+display_url: https://quotes.thegoodland.io
+
+media_folder: public/img
 public_folder: /img
 
 collections:
   - name: "quote"
-    label: "Quotes"
-    folder: "content/allquotes"
+    label: "Quote"
+    folder: "content/quotes"
     format: "frontmatter"
     create: true
-    slug: "{{author}}-{{reference}}"
+    slug: "{{author}}-{{reference}}-{{uuid}}"
     editor:
       preview: false
     fields:
       - { label: "Text", name: "text", widget: "string" }
       - { label: "Author", name: "author", widget: "string" }
       - { label: "Reference", name: "reference", widget: "string" }
+      - { label: "Unique ID", name: "uuid", widget: uuid }
+      - label: "Category"
+        name: "category"
+        widget: "list"
+        field:
+          {
+            label: "Category",
+            name: "category",
+            widget: "relation",
+            collection: "categories",
+            search_fields: ["name"],
+            value_field: "name",
+            display_fields: ["name"],
+          }
+  - name: "categories"
+    label: "Categories"
+    folder: "content/categories"
+    format: "frontmatter"
+    create: true
+    slug: "{{name}}"
+    identifier_field: name
+    summary: "{{name}}"
+    editor:
+      preview: false
+    fields:
+      - { label: "Category Name", name: "name", widget: "string" }
+  - name: "authors"
+    label: "Authors"
+    folder: "content/authors"
+    format: "frontmatter"
+    create: true
+    slug: "{{name}}"
+    identifier_field: name
+    summary: "{{name}}"
+    editor:
+      preview: false
+    fields:
+      - { label: "Author Name", name: "name", widget: "string" }
+  - name: "references"
+    label: "References"
+    folder: "content/references"
+    format: "frontmatter"
+    create: true
+    slug: "{{name}}-{{author.name}}"
+    identifier_field: name
+    summary: "{{name}}"
+    editor:
+      preview: false
+    fields:
+      - { label: "Reference Name", name: "name", widget: "string" }
+      - { label: "Link", name: "link", widget: "string" }
+      - {
+          label: "Author",
+          name: "author",
+          widget: "relation",
+          collection: "authors",
+          search_fields: ["name"],
+          value_field: "name",
+          display_fields: ["name"],
+        }
+
+local_backend: true
