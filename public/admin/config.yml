@@ -87,7 +87,7 @@ collections:
     folder: "content/references"
     format: "frontmatter"
     create: true
-    slug: "{{name}}-{{author}}"
+    slug: "{{name}}"
     identifier_field: uuid
     summary: "{{name}}"
     editor:

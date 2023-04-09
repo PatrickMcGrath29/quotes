@@ -15,7 +15,7 @@
 
 <script>
   // https://github.com/ai/nanoid
-  function nanoid(t = 21) {
+  function nanoid(t = 10) {
     return crypto
       .getRandomValues(new Uint8Array(t))
       .reduce(
