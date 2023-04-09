@@ -18,12 +18,29 @@ collections:
     format: "frontmatter"
     create: true
     slug: "{{author}}-{{reference}}-{{uuid}}"
+    summary: "{{reference}} by {{author}} -- {{text}}"
     editor:
       preview: false
     fields:
       - { label: "Text", name: "text", widget: "string" }
-      - { label: "Author", name: "author", widget: "string" }
-      - { label: "Reference", name: "reference", widget: "string" }
+      - {
+          label: "Author",
+          name: "author",
+          widget: "relation",
+          collection: "authors",
+          search_fields: ["name"],
+          value_field: "name",
+          display_fields: ["name"],
+        }
+      - {
+          label: "Reference",
+          name: "reference",
+          widget: "relation",
+          collection: "references",
+          search_fields: ["name"],
+          value_field: "name",
+          display_fields: ["name"],
+        }
       - { label: "Unique ID", name: "uuid", widget: uuid }
       - label: "Category"
         name: "category"
