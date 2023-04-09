@@ -22,6 +22,7 @@ collections:
     editor:
       preview: false
     fields:
+      - { label: "Unique ID", name: "uuid", widget: uuid }
       - { label: "Text", name: "text", widget: "string" }
       - {
           label: "Author",
@@ -29,7 +30,7 @@ collections:
           widget: "relation",
           collection: "authors",
           search_fields: ["name"],
-          value_field: "name",
+          value_field: "uuid",
           display_fields: ["name"],
         }
       - {
@@ -38,10 +39,9 @@ collections:
           widget: "relation",
           collection: "references",
           search_fields: ["name"],
-          value_field: "name",
+          value_field: "uuid",
           display_fields: ["name"],
         }
-      - { label: "Unique ID", name: "uuid", widget: uuid }
       - label: "Category"
         name: "category"
         widget: "list"
@@ -52,7 +52,7 @@ collections:
             widget: "relation",
             collection: "categories",
             search_fields: ["name"],
-            value_field: "name",
+            value_field: "uuid",
             display_fields: ["name"],
           }
   - name: "categories"
@@ -66,6 +66,7 @@ collections:
     editor:
       preview: false
     fields:
+      - { label: "Unique ID", name: "uuid", widget: uuid }
       - { label: "Category Name", name: "name", widget: "string" }
   - name: "authors"
     label: "Authors"
@@ -78,18 +79,20 @@ collections:
     editor:
       preview: false
     fields:
+      - { label: "Unique ID", name: "uuid", widget: uuid }
       - { label: "Author Name", name: "name", widget: "string" }
   - name: "references"
     label: "References"
     folder: "content/references"
     format: "frontmatter"
     create: true
-    slug: "{{name}}-{{author.name}}"
+    slug: "{{name}}-{{author}}"
     identifier_field: name
     summary: "{{name}}"
     editor:
       preview: false
     fields:
+      - { label: "Unique ID", name: "uuid", widget: uuid }
       - { label: "Reference Name", name: "name", widget: "string" }
       - { label: "Link", name: "link", widget: "string" }
       - {
@@ -98,7 +101,7 @@ collections:
           widget: "relation",
           collection: "authors",
           search_fields: ["name"],
-          value_field: "name",
+          value_field: "uuid",
           display_fields: ["name"],
         }
 
