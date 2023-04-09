@@ -1,0 +1,109 @@
+backend:
+  name: git-gateway
+  branch: main
+  repo: PatrickMcGrath29/quotes
+  squash_merges: true
+  use_graphql: true
+
+site_url: https://quotes.thegoodland.io
+display_url: https://quotes.thegoodland.io
+
+media_folder: public/img
+public_folder: /img
+
+collections:
+  - name: "quote"
+    label: "Quote"
+    folder: "content/quotes"
+    format: "frontmatter"
+    create: true
+    slug: "{{uuid}}"
+    summary: "{{text}}"
+    editor:
+      preview: false
+    identifier_field: uuid
+    fields:
+      - { label: "Unique ID", name: "uuid", widget: uuid }
+      - { label: "Text", name: "text", widget: "string" }
+      - {
+          label: "Author",
+          name: "author",
+          widget: "relation",
+          collection: "authors",
+          search_fields: ["name"],
+          value_field: "uuid",
+          display_fields: ["name"],
+        }
+      - {
+          label: "Reference",
+          name: "reference",
+          widget: "relation",
+          collection: "references",
+          search_fields: ["name"],
+          value_field: "uuid",
+          display_fields: ["name"],
+        }
+      - label: "Category"
+        name: "category"
+        widget: "list"
+        field:
+          {
+            label: "Category",
+            name: "category",
+            widget: "relation",
+            collection: "categories",
+            search_fields: ["name"],
+            value_field: "uuid",
+            display_fields: ["name"],
+          }
+  - name: "categories"
+    label: "Categories"
+    folder: "content/categories"
+    format: "frontmatter"
+    create: true
+    slug: "{{name}}"
+    identifier_field: uuid
+    summary: "{{name}}"
+    editor:
+      preview: false
+    fields:
+      - { label: "Unique ID", name: "uuid", widget: uuid }
+      - { label: "Category Name", name: "name", widget: "string" }
+  - name: "authors"
+    label: "Authors"
+    folder: "content/authors"
+    format: "frontmatter"
+    create: true
+    slug: "{{name}}"
+    identifier_field: uuid
+    summary: "{{name}}"
+    editor:
+      preview: false
+    fields:
+      - { label: "Unique ID", name: "uuid", widget: uuid }
+      - { label: "Author Name", name: "name", widget: "string" }
+  - name: "references"
+    label: "References"
+    folder: "content/references"
+    format: "frontmatter"
+    create: true
+    slug: "{{name}}"
+    identifier_field: uuid
+    summary: "{{name}}"
+    editor:
+      preview: false
+    fields:
+      - { label: "Unique ID", name: "uuid", widget: uuid }
+      - { label: "Reference Name", name: "name", widget: "string" }
+      - { label: "Link", name: "link", widget: "string", required: false }
+      - {
+          label: "Author",
+          name: "author",
+          widget: "relation",
+          collection: "authors",
+          search_fields: ["name"],
+          value_field: "uuid",
+          display_fields: ["name"],
+        }
+
+local_backend: true
