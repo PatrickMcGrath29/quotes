@@ -68,7 +68,7 @@ collections:
     format: "frontmatter"
     create: true
     slug: "{{reference_name}}-{{author_name}}"
-    summary: "{{reference_name}} by author_name"
+    summary: "{{reference_name}} by {{author_name}}"
     editor:
       preview: false
     fields:
@@ -91,6 +91,7 @@ collections:
           name: "file",
           widget: "file",
           media_folder: "/public/uploads/references",
+          required: false,
         }
 
 local_backend: true
