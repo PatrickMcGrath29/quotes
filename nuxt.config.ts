@@ -4,5 +4,6 @@ export default defineNuxtConfig({
       title: "Quotes, for the body of Christ",
     },
   },
+  ssr: true,
   modules: ["@nuxt/content", "@nuxtjs/tailwindcss", "@vueuse/nuxt"],
 });
