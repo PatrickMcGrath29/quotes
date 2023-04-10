@@ -75,9 +75,9 @@ const filteredQuotes = computed(() => {
             {{ quote.text }}
           </p>
           <h4 class="card-title text-base pt-4">
-            {{ quote.reference }}
+            {{ quote.reference.reference_name }}
           </h4>
-          <h5 class="text-sm">by {{ quote.author }}</h5>
+          <h5 class="text-sm">by {{ quote.reference.author_name }}</h5>
         </div>
       </div>
     </div>

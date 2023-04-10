@@ -2,8 +2,8 @@ import type { ParsedContent } from "@nuxt/content/dist/runtime/types";
 
 export interface Reference extends ParsedContent {
   uuid: string;
-  referenceName: string;
-  authorName: string;
+  reference_name: string;
+  author_name: string;
 }
 
 export interface RawQuote extends ParsedContent {

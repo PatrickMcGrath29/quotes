@@ -35,8 +35,8 @@ collections:
           display_fields: ["reference_name", "author_name"],
           required: false,
         }
-      - label: "Category"
-        name: "category"
+      - label: "Categories"
+        name: "categories"
         widget: "list"
         field:
           {
