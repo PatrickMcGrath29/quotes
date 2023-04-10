@@ -1,17 +1,17 @@
-import { Quote, Quotes } from "~/types";
+import { Quote, RawQuote, Reference } from "~/types";
 
 export const useQuotes = async (): Promise<Quote[]> => {
-  const { data } = await useAsyncData(() =>
-    queryContent<Quotes>("allquotes").findOne()
+  const quotes = await queryContent<RawQuote>("quotes").find();
+  const references = await queryContent<Reference>("reference").find();
+
+  const referencesById: Map<string, Reference> = new Map(
+    references.map((reference: Reference) => [reference.uuid, reference])
   );
 
-  return data.value?.quotes;
-};
-
-export const useColumnSettings = (numQuotes: number) => {
-  if (numQuotes < 3) {
-    return "columns-1";
-  } else if (numQuotes < 5) {
-    return "columns-md";
-  } else return "columns-sm";
+  return quotes.map((quote: RawQuote): Quote => {
+    return {
+      ...quote,
+      reference: referencesById.get(quote.reference) as Reference,
+    };
+  });
 };
