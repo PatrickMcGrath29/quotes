@@ -6,6 +6,6 @@ text: In his business in the kitchen (to which he had naturally a great
   during the fifteen years that he had been employed there... He tried to please
   God by doing little things for the love of Him in any work he did.
 reference: qVwDrrveOR
-category:
+categories:
   - The Presence of God
 ---

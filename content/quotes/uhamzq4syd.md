@@ -5,6 +5,6 @@ text: The life we live is the life of Christ alone. We think of the Christian
   substituted life, and Christ is our substitute within. 'I live, and yet no
   longer I, but Christ liveth in me'.
 reference: aIfAndk4Ds
-category:
+categories:
   - Christ Our Life
 ---

@@ -11,7 +11,7 @@ text: God will not give me humility or patience or holiness or love as separate
   in His Son. He that hath the Son hath the life, and that hath not the Son of
   God hath not the life'.
 reference: aIfAndk4Ds
-category:
+categories:
   - Humility
   - Christ Our Life
   - Abiding in Christ

@@ -41,7 +41,7 @@ collections:
         field:
           {
             label: "Category",
-            name: "category",
+            name: "categories",
             widget: "relation",
             collection: "categories",
             search_fields: ["name"],

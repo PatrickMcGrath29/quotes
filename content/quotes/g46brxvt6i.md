@@ -9,7 +9,7 @@ text: The most excellent subject to discourse or write of is Jesus Christ.
   he preached among the Corinthians, that this should be the only point of
   knowledge that he would profess himself to have skill in.
 reference: ZEJvDSyAST
-category:
+categories:
   - Looking to Jesus
   - The Beauty of the Lord
 ---

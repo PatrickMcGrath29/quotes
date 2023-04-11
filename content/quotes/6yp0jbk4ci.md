@@ -8,7 +8,7 @@ text: "'As sorrowful yet always rejoicing': these precious golden worlds teach
   again, and your heart shall rejoice, and your joy shall no man take from you'.
   The presence of Jesus, distinctly manifested, cannot but give joy."
 reference: UUreff0UOd
-category:
+categories:
   - Suffering
   - The Presence of God
 ---

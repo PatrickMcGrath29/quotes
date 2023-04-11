@@ -6,6 +6,6 @@ text: "If we give ourselves unreservedly to God, many adjustments may have to be
   touch, point by point, everything that is not of Him, and He will say: 'This
   must go.' Are you willing?"
 reference: aIfAndk4Ds
-category:
+categories:
   - Consecration
 ---

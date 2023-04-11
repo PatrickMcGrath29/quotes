@@ -5,7 +5,7 @@ text: My giving of myself to the Lord must be an initial fundamental act. Then
   but accepting with praise even what the flesh finds hard. That way lies true
   enrichment.
 reference: aIfAndk4Ds
-category:
+categories:
   - Consecration
   - Trials
 ---

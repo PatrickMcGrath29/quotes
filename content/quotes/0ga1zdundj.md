@@ -8,6 +8,6 @@ text: This is definitely not the hour when men take kindly to an exhortation to
   God says, “Be still, and know that I am God,” and still He says it, as if He
   means to tell us that our strength and safety lie not in noise but in silence.
 reference: a4BdZxBRz7
-category:
+categories:
   - Simplicity
 ---

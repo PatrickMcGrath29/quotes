@@ -11,6 +11,6 @@ text: In this knowledge of Christ, there is an excellency above all other
   him, the Pearl to enrich him, the Ark to support him, the Rock to sustain him
   under the heaviest pressures.
 reference: ZEJvDSyAST
-category:
+categories:
   - Looking to Jesus
 ---

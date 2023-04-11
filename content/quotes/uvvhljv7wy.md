@@ -5,6 +5,6 @@ text: "Even in the regenerate man there is no power of goodness in himself: he
   God is just as indispensable, and must be just as continuous and unbroken, as
   the breathing that maintains his natural life"
 reference: f-bXBvtyMR
-category:
+categories:
   - Waiting on God
 ---

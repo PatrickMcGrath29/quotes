@@ -8,6 +8,6 @@ text: In our desire after God, let us keep always in mind that God also has a
   in Christ Jesus. With them God can walk unhindered, toward them He can act
   like the God He is.
 reference: a4BdZxBRz7
-category:
+categories:
   - Consecration
 ---

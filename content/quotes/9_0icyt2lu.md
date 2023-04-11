@@ -7,7 +7,7 @@ text: How many of us know that, because Christ is risen, we are therefore alive
   we dare not squander a shilling of our money, or an hour of our time, or any
   of our mental or physical powers?
 reference: aIfAndk4Ds
-category:
+categories:
   - Christ Our Life
   - Consecration
   - The Headship of Christ
