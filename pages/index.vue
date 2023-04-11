@@ -1,9 +1,21 @@
 <script lang="ts" setup>
-import { Quote } from "~/types";
+import { Quote, RawQuote, Reference } from "~/types";
 
 const ALL_CATEGORIES_TAG = "All";
 
-const allQuotes = await useQuotes();
+const quotes = await queryContent<RawQuote>("/quotes").find();
+const references = await queryContent<Reference>("/references").find();
+
+const referencesById: Map<string, Reference> = new Map(
+  references.map((reference: Reference) => [reference.uuid, reference])
+);
+
+const allQuotes = quotes.map((quote: RawQuote): Quote => {
+  return {
+    ...quote,
+    reference: referencesById.get(quote.reference) as Reference,
+  };
+});
 
 const categories: string[] = [
   ALL_CATEGORIES_TAG,
