@@ -23,7 +23,7 @@ const categories: string[] = [
 ];
 
 const selectedCategory = ref(ALL_CATEGORIES_TAG);
-const setCategory = (categories: string) => {
+const setCategory = (category: string) => {
   selectedCategory.value = category;
 };
 
