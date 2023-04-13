@@ -6,6 +6,13 @@ export default defineNuxtConfig({
   },
   pwa: {
     registerWebManifestInRouteRules: true,
+    manifest: {
+      lang: "en",
+      short_name: "Quotes",
+      name: "Quotes",
+      start_url: "/?source=pwa",
+      display: "fullscreen",
+    },
   },
   experimental: {
     viewTransition: true,
