@@ -4,6 +4,9 @@ export default defineNuxtConfig({
       title: "Quotes for the body of Christ",
     },
   },
+  pwa: {
+    registerWebManifestInRouteRules: true,
+  },
   experimental: {
     viewTransition: true,
     renderJsonPayloads: true,
