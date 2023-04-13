@@ -80,7 +80,7 @@ const filteredQuotes = computed(() => {
     >
       <div
         v-for="quote in filteredQuotes"
-        class="inline-block my-2 card bg-slate-800 rounded-md"
+        class="inline-block my-2 card bg-slate-800 rounded-md hover:brightness-125 transition-all duration-300"
       >
         <div class="card-body">
           <p>
