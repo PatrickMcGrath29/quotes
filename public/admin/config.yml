@@ -24,7 +24,7 @@ collections:
     identifier_field: uuid
     fields:
       - { label: "Unique ID", name: "uuid", widget: uuid }
-      - { label: "Text", name: "text", widget: "string" }
+      - { label: "Text", name: "text", widget: "text" }
       - {
           label: "Reference",
           name: "reference",
