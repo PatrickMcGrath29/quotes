@@ -16,7 +16,6 @@ export default defineNuxtConfig({
   },
   experimental: {
     viewTransition: true,
-    renderJsonPayloads: true,
   },
   modules: [
     "@nuxt/content",
