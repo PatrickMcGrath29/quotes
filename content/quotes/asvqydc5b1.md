@@ -7,5 +7,6 @@ text: You probably know the illustration of Fact, Faith and Experience walking
   Experience and turned to see how he was getting on, he lost his balance and
   tumbled off the wall, and poor old Experience fell down after him.
 reference: aIfAndk4Ds
-categories: []
+categories:
+  - Faith
 ---
