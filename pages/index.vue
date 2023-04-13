@@ -59,7 +59,7 @@ const filteredQuotes = computed(() => {
         </div>
         <hr class="border-slate-700" />
         <div class="collapse collapse-arrow">
-          <input type="checkbox" />
+          <input type="checkbox" checked />
           <div class="collapse-title font-semibold">Filter by Category</div>
           <div class="collapse-content flex flex-wrap gap-2">
             <button
