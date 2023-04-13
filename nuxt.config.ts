@@ -6,6 +6,12 @@ export default defineNuxtConfig({
   },
   experimental: {
     viewTransition: true,
+    renderJsonPayloads: true,
   },
-  modules: ["@nuxt/content", "@nuxtjs/tailwindcss", "@vueuse/nuxt"],
+  modules: [
+    "@nuxt/content",
+    "@nuxtjs/tailwindcss",
+    "@vueuse/nuxt",
+    "@vite-pwa/nuxt",
+  ],
 });
