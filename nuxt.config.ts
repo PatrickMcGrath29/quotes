@@ -7,5 +7,10 @@ export default defineNuxtConfig({
   experimental: {
     viewTransition: true,
   },
+  nitro: {
+    prerender: {
+      routes: ["/"],
+    },
+  },
   modules: ["@nuxt/content", "@nuxtjs/tailwindcss", "@vueuse/nuxt"],
 });
