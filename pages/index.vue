@@ -83,7 +83,7 @@ const filteredQuotes = computed(() => {
         class="inline-block my-2 card bg-slate-800 rounded-md hover:brightness-125 transition-all duration-300"
       >
         <div class="card-body">
-          <p>
+          <p class="whitespace-pre-wrap">
             {{ quote.text }}
           </p>
           <h4 class="card-title text-base pt-4">
