@@ -3,18 +3,14 @@ import { Quote, RawQuote, Reference } from "~/types";
 
 const ALL_CATEGORIES_TAG = "All";
 
-const { data: quotes } = await useAsyncData("quotes", () =>
-  queryContent<Quote>("/quotes").find()
-);
-const { data: references } = await useAsyncData("references", () =>
-  queryContent<Reference>("/references").find()
-);
+const quotes = await queryContent<RawQuote>("/quotes").find();
+const references = await queryContent<Reference>("/references").find();
 
 const referencesById: Map<string, Reference> = new Map(
-  references.value.map((reference: Reference) => [reference.uuid, reference])
+  references.map((reference: Reference) => [reference.uuid, reference])
 );
 
-const allQuotes = quotes.value.map((quote: RawQuote): Quote => {
+const allQuotes = quotes.map((quote: RawQuote): Quote => {
   return {
     ...quote,
     reference: referencesById.get(quote.reference) as Reference,
@@ -23,7 +19,7 @@ const allQuotes = quotes.value.map((quote: RawQuote): Quote => {
 
 const categories: string[] = [
   ALL_CATEGORIES_TAG,
-  ...new Set(allQuotes?.flatMap((quote: Quote) => quote.categories).sort()),
+  ...new Set(allQuotes.flatMap((quote: Quote) => quote.categories).sort()),
 ];
 
 const selectedCategory = ref(ALL_CATEGORIES_TAG);
@@ -34,7 +30,7 @@ const setCategory = (category: string) => {
 const filteredQuotes = computed(() => {
   return selectedCategory.value === ALL_CATEGORIES_TAG
     ? allQuotes
-    : allQuotes?.filter((quote: Quote) =>
+    : allQuotes.filter((quote: Quote) =>
         quote.categories.includes(selectedCategory.value)
       );
 });

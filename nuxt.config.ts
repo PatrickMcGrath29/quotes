@@ -4,7 +4,6 @@ export default defineNuxtConfig({
       title: "Quotes for the body of Christ",
     },
   },
-  ssr: false,
   experimental: {
     viewTransition: true,
   },
