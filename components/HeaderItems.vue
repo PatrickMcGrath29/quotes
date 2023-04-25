@@ -1,3 +1,3 @@
 <template>
-  <li><NuxtLink to="/">Quotes</NuxtLink></li>
+  <li><a href="https://thegoodland.io">Blog</a></li>
 </template>
