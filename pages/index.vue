@@ -1,8 +1,6 @@
 <script lang="ts" setup>
 import { Quote, RawQuote, Reference } from "~/types";
 
-const ALL_CATEGORIES_TAG = "All";
-
 const quotes = await useQuotes();
 const references = await useReferences();
 
@@ -17,21 +15,14 @@ const allQuotes = quotes.map((quote: RawQuote): Quote => {
   };
 });
 
-const categories: string[] = [
-  ALL_CATEGORIES_TAG,
-  ...new Set(allQuotes.flatMap((quote: Quote) => quote.categories).sort()),
-];
-
-const selectedCategory = ref(ALL_CATEGORIES_TAG);
-const setCategory = (category: string) => {
-  selectedCategory.value = category;
-};
+const { activeCategory, shouldFilterByCategory, categories } =
+  useCategories(allQuotes);
 
 const filteredQuotes = computed(() => {
-  return selectedCategory.value === ALL_CATEGORIES_TAG
+  return shouldFilterByCategory.value
     ? allQuotes
     : allQuotes.filter((quote: Quote) =>
-        quote.categories.includes(selectedCategory.value)
+        quote.categories.includes(activeCategory.value)
       );
 });
 </script>
@@ -63,10 +54,10 @@ const filteredQuotes = computed(() => {
           <div class="collapse-title font-semibold">Filter by Category</div>
           <div class="collapse-content flex flex-wrap gap-2">
             <button
-              @click="setCategory(category)"
+              @click="activeCategory = category"
               v-for="category in categories"
               class="px-2.5 py-1.5 text-base rounded-md bg-slate-600 hover:bg-slate-700 transition-all"
-              :class="{ '!bg-slate-900': category === selectedCategory }"
+              :class="{ '!bg-slate-900': category === activeCategory }"
             >
               {{ category }}
             </button>
