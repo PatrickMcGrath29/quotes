@@ -7,5 +7,10 @@ export default defineNuxtConfig({
   experimental: {
     viewTransition: true,
   },
-  modules: ["@nuxt/content", "@nuxtjs/tailwindcss", "@vueuse/nuxt"],
+  modules: [
+    "@nuxt/content",
+    "@nuxtjs/tailwindcss",
+    "@vueuse/nuxt",
+    "nuxt-icon",
+  ],
 });

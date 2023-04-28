@@ -86,10 +86,20 @@ const filteredQuotes = computed(() => {
           <p class="whitespace-pre-wrap">
             {{ quote.text }}
           </p>
-          {{ quote.reference }}
-          <h4 v-if="quote.reference.resource_link">
-            <a :href="quote.reference.resource_link">Continue Reading</a>
-          </h4>
+          <h5
+            v-if="quote.reference.resource_link"
+            class="text-sm text-blue-300 pt-1"
+          >
+            <a
+              :href="quote.reference.resource_link"
+              class="align-middle"
+              nofollow
+            >
+              Continue Reading
+              <Icon name="ci:external-link" />
+            </a>
+          </h5>
+
           <h4
             class="card-title text-base pt-4"
             v-if="quote.reference.author_name"
