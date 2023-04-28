@@ -3,8 +3,8 @@ import { Quote, RawQuote, Reference } from "~/types";
 
 const ALL_CATEGORIES_TAG = "All";
 
-const quotes = await queryContent<RawQuote>("/quotes").find();
-const references = await queryContent<Reference>("/references").find();
+const quotes = await useQuotes();
+const references = await useReferences();
 
 const referencesById: Map<string, Reference> = new Map(
   references.map((reference: Reference) => [reference.uuid, reference])
@@ -86,6 +86,10 @@ const filteredQuotes = computed(() => {
           <p class="whitespace-pre-wrap">
             {{ quote.text }}
           </p>
+          {{ quote.reference }}
+          <h4 v-if="quote.reference.resource_link">
+            <a :href="quote.reference.resource_link">Continue Reading</a>
+          </h4>
           <h4
             class="card-title text-base pt-4"
             v-if="quote.reference.author_name"

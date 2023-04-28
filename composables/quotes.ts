@@ -1,18 +1,20 @@
-import { Quote, RawQuote, Reference } from "~/types";
+import { Quote, RawQuote, RawReference, Reference } from "~/types";
 
-export const useQuotes = async (): Promise<Quote[]> => {
+export const useQuotes = async (): Promise<RawQuote[]> => {
+  return await queryContent<RawQuote>("/quotes").find();
+};
 
-  const quotes = await queryContent<RawQuote>("/quotes").find();
-  const references = await queryContent<Reference>("/references").find();
+export const useReferences = async (): Promise<Reference[]> => {
+  const references = await queryContent<RawReference>("/references").find();
 
-  const referencesById: Map<string, Reference> = new Map(
-    references.map((reference: Reference) => [reference.uuid, reference])
-  );
-
-  return quotes.map((quote: RawQuote): Quote => {
+  const toReference = (rawReference: RawReference): Reference => {
     return {
-      ...quote,
-      reference: referencesById.get(quote.reference) as Reference,
+      uuid: rawReference.uuid,
+      author_name: rawReference.author_name,
+      reference_name: rawReference.reference_name,
+      resource_link: rawReference.resource_link,
     };
-  });
+  };
+
+  return references.map(toReference);
 };
