@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="inline-block my-2 card bg-slate-800 rounded-md hover:brightness-125 transition-all duration-300"
-  >
+  <div class="inline-block my-2 card bg-slate-800 rounded-md">
     <div class="card-body">
       <p class="whitespace-pre-wrap">
         {{ quote.text }}
