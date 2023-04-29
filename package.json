@@ -20,5 +20,9 @@
     "nuxt": "^3.4.1",
     "nuxt-icon": "^0.4.0",
     "sass": "^1.56.2"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "^0.4.9",
+    "pinia": "^2.0.35"
   }
 }

@@ -1,28 +1,12 @@
 <script lang="ts" setup>
-import { Quote, RawQuote, Reference } from "~/types";
+import { useQuoteStore } from "~/store/quotes";
+import { Quote } from "~/types";
 
-const [quotes, references] = await Promise.all([useQuotes(), useReferences()]);
+const quoteStore = useQuoteStore();
+await useAsyncData("fetch-quotes", () => quoteStore.fetchQuotes());
 
-const referencesById: Map<string, Reference> = new Map(
-  references.map((reference: Reference) => [reference.uuid, reference])
-);
-
-const allQuotes = quotes.map((quote: RawQuote): Quote => {
-  return {
-    ...quote,
-    reference: referencesById.get(quote.reference) as Reference,
-  };
-});
-
-const { activeCategory, shouldFilterByCategory, categories } =
-  useCategories(allQuotes);
-
-const filteredQuotes = computed(() => {
-  return shouldFilterByCategory.value
-    ? allQuotes
-    : allQuotes.filter((quote: Quote) =>
-        quote.categories.includes(activeCategory.value)
-      );
+const columnSettings = computed(() => {
+  return useColumnSettings(quoteStore.filteredQuotes.length);
 });
 </script>
 
@@ -53,10 +37,12 @@ const filteredQuotes = computed(() => {
           <div class="collapse-title font-semibold">Filter by Category</div>
           <div class="collapse-content flex flex-wrap gap-2">
             <button
-              @click="activeCategory = category"
-              v-for="category in categories"
+              @click="quoteStore.activeCategory = category"
+              v-for="category in quoteStore.categories"
               class="px-2.5 py-1.5 text-base rounded-md bg-slate-600 hover:bg-slate-700 transition-all"
-              :class="{ '!bg-slate-900': category === activeCategory }"
+              :class="{
+                '!bg-slate-900': category === quoteStore.activeCategory,
+              }"
             >
               {{ category }}
             </button>
@@ -64,11 +50,8 @@ const filteredQuotes = computed(() => {
         </div>
       </div>
     </div>
-    <div
-      class="gap-6 mt-4 mb-10"
-      :class="useColumnSettings(filteredQuotes.length)"
-    >
-      <QuoteCard :quote="quote" v-for="quote in filteredQuotes" />
+    <div class="gap-6 mt-4 mb-10" :class="columnSettings">
+      <QuoteCard :quote="quote" v-for="quote in quoteStore.filteredQuotes" />
     </div>
   </Container>
 </template>

@@ -20,18 +20,3 @@ export const useReferences = async (): Promise<Reference[]> => {
 
   return references.map(toReference);
 };
-
-export const useCategories = (quotes: Quote[]) => {
-  const categories: string[] = [
-    ALL_CATEGORIES_TAG,
-    ...new Set(quotes.flatMap((quote: Quote) => quote.categories).sort()),
-  ];
-
-  const activeCategory = ref(ALL_CATEGORIES_TAG);
-
-  const shouldFilterByCategory = computed(() => {
-    return activeCategory.value == ALL_CATEGORIES_TAG;
-  });
-
-  return { activeCategory, shouldFilterByCategory, categories };
-};
