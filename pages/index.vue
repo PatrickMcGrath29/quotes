@@ -1,8 +1,7 @@
 <script lang="ts" setup>
 import { Quote, RawQuote, Reference } from "~/types";
 
-const quotes = await useQuotes();
-const references = await useReferences();
+const [quotes, references] = await Promise.all([useQuotes(), useReferences()]);
 
 const referencesById: Map<string, Reference> = new Map(
   references.map((reference: Reference) => [reference.uuid, reference])
@@ -69,39 +68,7 @@ const filteredQuotes = computed(() => {
       class="gap-6 mt-4 mb-10"
       :class="useColumnSettings(filteredQuotes.length)"
     >
-      <div
-        v-for="quote in filteredQuotes"
-        class="inline-block my-2 card bg-slate-800 rounded-md hover:brightness-125 transition-all duration-300"
-      >
-        <div class="card-body">
-          <p class="whitespace-pre-wrap">
-            {{ quote.text }}
-          </p>
-          <h5
-            v-if="quote.reference.resource_link"
-            class="text-sm text-blue-300 pt-1"
-          >
-            <a
-              :href="quote.reference.resource_link"
-              class="align-middle"
-              nofollow
-            >
-              Continue Reading
-              <Icon name="ci:external-link" />
-            </a>
-          </h5>
-
-          <h4
-            class="card-title text-base pt-4"
-            v-if="quote.reference.author_name"
-          >
-            {{ quote.reference.reference_name }}
-          </h4>
-          <h5 class="text-sm" v-if="quote.reference.author_name">
-            by {{ quote.reference.author_name }}
-          </h5>
-        </div>
-      </div>
+      <QuoteCard :quote="quote" v-for="quote in filteredQuotes" />
     </div>
   </Container>
 </template>
