@@ -13,7 +13,13 @@ const columnSettings = computed(() => {
   <Container>
     <Hero />
     <div class="gap-6 mt-4 mb-10" :class="columnSettings">
-      <QuoteCard :quote="quote" v-for="quote in quoteStore.filteredQuotes" />
+      <NuxtLink
+        v-for="quote in quoteStore.filteredQuotes"
+        :to="`/quote/${quote.uuid}`"
+        class="hover:brightness-125 transition-all duration-300"
+      >
+        <QuoteCard :quote="quote" />
+      </NuxtLink>
     </div>
   </Container>
 </template>

@@ -7,6 +7,8 @@ export const useQuoteStore = defineStore("quotes", () => {
   const quotes: Ref<Quote[]> = ref([]);
 
   const fetchQuotes = async () => {
+    if (quotes.value.length > 0) return;
+
     const [rawQuotes, rawReferences] = await Promise.all([
       useQuotes(),
       useReferences(),
