@@ -9,12 +9,14 @@ await useAsyncData("fetch-quotes", () => quoteStore.fetchQuotes());
 const quote = computed(() => {
   console.log(`querying ${route.params.id}`);
   const quote = quoteStore.quotes.find((q: Quote) => {
-    console.log(`looking at ${q.uuid}`);
+    console.log(`looking at ${q.uuid} expecting=${q.uuid == route.params.id}`);
     return q.uuid == route.params.id;
   });
 
   return quote as Quote;
 });
+
+console.log(quote);
 </script>
 
 <template>
