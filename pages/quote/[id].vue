@@ -7,21 +7,15 @@ const quoteStore = useQuoteStore();
 await useAsyncData("fetch-quotes", () => quoteStore.fetchQuotes());
 
 const quote = computed(() => {
-  console.log(`querying ${route.params.id}`);
-  const quote = quoteStore.quotes.find((q: Quote) => {
-    console.log(`looking at ${q.uuid} expecting=${q.uuid == route.params.id}`);
-    return q.uuid == route.params.id;
-  });
+  const quote = quoteStore.quotes.find((q: Quote) => q.uuid == route.params.id);
 
   return quote as Quote;
 });
-
-console.log(quote);
 </script>
 
 <template>
   <Container>
-    <div class="flex items-center flex-col" v-if="quote">
+    <div class="flex items-center flex-col">
       <QuoteCard :quote="quote" class="text-lg" />
       <div class="my-3">
         <NuxtLink class="btn btn-ghost" to="/">
