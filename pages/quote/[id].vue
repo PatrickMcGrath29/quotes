@@ -4,7 +4,7 @@ import { useQuoteStore } from "~/store/quotes";
 
 const route = useRoute();
 const quoteStore = useQuoteStore();
-await quoteStore.fetchQuotes();
+await useAsyncData("fetch-quotes", () => quoteStore.fetchQuotes());
 
 const quote = computed(() => {
   const quote = quoteStore.quotes.find((q: Quote) => q.uuid == route.params.id);
@@ -15,7 +15,14 @@ const quote = computed(() => {
 
 <template>
   <Container>
-    <div class="flex items-center flex-col">
+    {{ quoteStore.quotes }}
+    <hr />
+    {{ route.params.uuid }}
+    <hr />
+    {{ quoteStore.quotes.find((q: Quote) => q.uuid == route.params.id) }}
+    <hr />
+    {{ quote }}
+    <div class="flex items-center flex-col" v-if="quote">
       <QuoteCard :quote="quote" class="text-lg" />
       <div class="my-3">
         <NuxtLink class="btn btn-ghost" to="/">
