@@ -6,22 +6,16 @@ const route = useRoute();
 const quoteStore = useQuoteStore();
 await quoteStore.fetchQuotes();
 
-const findQuote = (): Quote => {
+const quote = computed(() => {
   const quote = quoteStore.quotes.find((q: Quote) => q.uuid == route.params.id);
 
   return quote as Quote;
-};
-
-const quote = findQuote();
+});
 </script>
 
 <template>
   <Container>
-    {{ quoteStore.quotes }}
-    <hr />
-    {{ quote }}
-    <hr />
-    <!-- <div class="flex items-center flex-col">
+    <div class="flex items-center flex-col">
       <QuoteCard :quote="quote" class="text-lg" />
       <div class="my-3">
         <NuxtLink class="btn btn-ghost" to="/">
@@ -29,6 +23,6 @@ const quote = findQuote();
           <span class="p-1">All Quotes</span>
         </NuxtLink>
       </div>
-    </div> -->
+    </div>
   </Container>
 </template>
