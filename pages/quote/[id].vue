@@ -16,8 +16,12 @@ const quote = findQuote();
 </script>
 
 <template>
-  <Container v-if="quote">
-    <div class="flex items-center flex-col">
+  <Container>
+    {{ quoteStore.quotes }}
+    <hr />
+    {{ quote }}
+    <hr />
+    <!-- <div class="flex items-center flex-col">
       <QuoteCard :quote="quote" class="text-lg" />
       <div class="my-3">
         <NuxtLink class="btn btn-ghost" to="/">
@@ -25,6 +29,6 @@ const quote = findQuote();
           <span class="p-1">All Quotes</span>
         </NuxtLink>
       </div>
-    </div>
+    </div> -->
   </Container>
 </template>
