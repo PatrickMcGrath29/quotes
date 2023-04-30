@@ -17,7 +17,7 @@ const quote = computed(() => {
   <Container>
     {{ quoteStore.quotes }}
     <hr />
-    {{ route.params.uuid }}
+    {{ route.params.id }}
     <hr />
     {{ quoteStore.quotes.find((q: Quote) => q.uuid == route.params.id) }}
     <hr />
