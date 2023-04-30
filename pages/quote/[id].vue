@@ -19,7 +19,7 @@ const quote = computed(() => {
     <hr />
     {{ route.params.id }}
     <hr />
-    {{ quoteStore.quotes.filter((q: Quote) => q.uuid == route.params.id) }}
+    {{ quoteStore.quotes.filter((q: Quote) => true) }}
     <hr />
     {{ quote }}
     <div class="flex items-center flex-col" v-if="quote">
