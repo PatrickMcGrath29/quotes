@@ -7,7 +7,11 @@ const quoteStore = useQuoteStore();
 await useAsyncData("fetch-quotes", () => quoteStore.fetchQuotes());
 
 const quote = computed(() => {
-  const quote = quoteStore.quotes.find((q: Quote) => q.uuid == route.params.id);
+  console.log(`querying ${route.params.id}`);
+  const quote = quoteStore.quotes.find((q: Quote) => {
+    console.log(`looking at ${q.uuid}`);
+    return q.uuid == route.params.id;
+  });
 
   return quote as Quote;
 });
@@ -15,17 +19,6 @@ const quote = computed(() => {
 
 <template>
   <Container>
-    {{ quoteStore.quotes }}
-    <hr />
-    {{ route.params.id }}
-    <hr />
-    {{
-      quoteStore.quotes.filter(({ uuid }) => {
-        return uuid == route.params.id;
-      })
-    }}
-    <hr />
-    {{ quote }}
     <div class="flex items-center flex-col" v-if="quote">
       <QuoteCard :quote="quote" class="text-lg" />
       <div class="my-3">
