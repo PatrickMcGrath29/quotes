@@ -4,7 +4,7 @@ import { useQuoteStore } from "~/store/quotes";
 
 const route = useRoute();
 const quoteStore = useQuoteStore();
-await useAsyncData("fetch-quotes-id", () => quoteStore.fetchQuotes());
+await quoteStore.fetchQuotes();
 
 const findQuote = (): Quote => {
   const quote = quoteStore.quotes.find((q: Quote) => q.uuid == route.params.id);
