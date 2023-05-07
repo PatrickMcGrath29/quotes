@@ -8,4 +8,5 @@ reference: aIfAndk4Ds
 categories:
   - Consecration
   - The Headship of Christ
+link: https://thegoodland.io/2023/05/07/the-absolute-lordship-of-christ/
 ---
