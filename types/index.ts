@@ -6,13 +6,13 @@ export interface RawQuote extends ParsedContent {
   text: string;
   reference: string;
   categories: string[];
+  resource_link?: string;
 }
 
 export interface Reference {
   uuid: string;
   reference_name?: string;
   author_name?: string;
-  resource_link?: string;
 }
 
 export interface Quote {
@@ -20,4 +20,5 @@ export interface Quote {
   text: string;
   reference: Reference;
   categories: string[];
+  resource_link?: string;
 }

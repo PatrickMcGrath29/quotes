@@ -22,7 +22,6 @@ export const useReferences = async (): Promise<Reference[]> => {
       uuid: rawReference.uuid.toLowerCase(),
       author_name: rawReference.author_name,
       reference_name: rawReference.reference_name,
-      resource_link: rawReference.resource_link,
     };
   };
 

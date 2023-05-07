@@ -4,11 +4,8 @@
       <p class="whitespace-pre-wrap">
         {{ quote.text }}
       </p>
-      <h5
-        v-if="quote.reference.resource_link"
-        class="text-sm text-blue-300 pt-1"
-      >
-        <a :href="quote.reference.resource_link" class="align-middle" nofollow>
+      <h5 v-if="quote.resource_link" class="text-sm text-blue-300 pt-1">
+        <a :href="quote.resource_link" class="align-middle" nofollow>
           Continue Reading
           <Icon name="ci:external-link" />
         </a>

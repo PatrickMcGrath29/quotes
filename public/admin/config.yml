@@ -49,6 +49,7 @@ collections:
             display_fields: ["name"],
             required: false,
           }
+      - { label: "Link", name: "link", widget: "string", required: false }
   - name: "categories"
     label: "Categories"
     folder: "content/categories"
@@ -85,7 +86,6 @@ collections:
           widget: "string",
           required: false,
         }
-      - { label: "Link", name: "link", widget: "string", required: false }
       - {
           label: "File",
           name: "file",
