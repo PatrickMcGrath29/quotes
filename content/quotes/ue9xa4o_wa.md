@@ -1,9 +1,11 @@
 ---
 uuid: ue9Xa4o_wa
-text: Once we have made the discovery of the fact that we are the dwelling place
-  of God, then a full surrender of ourselves to God must follow. When we see
-  that we are the temple of God we shall immediately recognize that we are not
-  our own.
+text: 'I was greatly impressed by something a great national leader wrote in his
+  autobiography: "I want nothing for myself; I want everything for my country."
+  If a man can be willing that his country should have everything and he himself
+  nothing, cannot we say to our God: "Lord, I want nothing for myself; I want
+  all for Thee. I will what Thou willest, and I want to have nothing outside Thy
+  will."'
 reference: aIfAndk4Ds
 categories:
   - Consecration
