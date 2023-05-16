@@ -13,4 +13,5 @@ text: >-
 reference: ZEJvDSyAST
 categories:
   - Looking to Jesus
+  - The Beauty of the Lord
 ---
