@@ -6,5 +6,6 @@ text: "There is nothing smart about wrongdoing and nothing stupid about
   race which it surely is and setting forth righteousness and true holiness as
   the only worthy pursuits for moral beings. "
 reference: gVNtZHPErX
-categories: []
+categories:
+  - Holiness
 ---
