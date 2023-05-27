@@ -27,13 +27,14 @@ collections:
       - { label: "Text", name: "text", widget: "text" }
       - {
           label: "Reference",
-          name: "reference",
+          name: "referenceId",
           widget: "relation",
           collection: "references",
-          search_fields: ["reference_name", "author_name"],
+          search_fields: ["referenceName", "authorName"],
           value_field: "uuid",
-          display_fields: ["reference_name", "author_name"],
+          display_fields: ["referenceName", "authorName"],
           required: false,
+          hint: "Optional, the reference associated with this quote (book, sermon). If the reference is not known leave this blank.",
         }
       - label: "Categories"
         name: "categories"
@@ -49,7 +50,13 @@ collections:
             display_fields: ["name"],
             required: false,
           }
-      - { label: "Link", name: "link", widget: "string", required: false }
+      - {
+          label: "Quote Link",
+          name: "link",
+          widget: "string",
+          required: false,
+          hint: "A link associated with this quote, for further reading. If there is a link associated with the resource for this quote then this will take precedence over it.",
+        }
   - name: "categories"
     label: "Categories"
     folder: "content/categories"
@@ -68,23 +75,30 @@ collections:
     folder: "content/references"
     format: "frontmatter"
     create: true
-    slug: "{{uuid}}-{{reference_name}}-{{author_name}}"
-    summary: "{{reference_name}} by {{author_name}}"
+    slug: "{{uuid}}-{{referenceName}}-{{authorName}}"
+    summary: "{{referenceName}} by {{authorName}}"
     editor:
       preview: false
     fields:
       - { label: "Unique ID", name: "uuid", widget: uuid }
       - {
           label: "Reference Name",
-          name: "reference_name",
+          name: "referenceName",
           widget: "string",
           required: false,
         }
       - {
           label: "Author Name",
-          name: "author_name",
+          name: "authorName",
           widget: "string",
           required: false,
+        }
+      - {
+          label: "Resource Link",
+          name: "link",
+          widget: "string",
+          required: false,
+          hint: "A link associated with this resource for further reading.",
         }
       - {
           label: "File",

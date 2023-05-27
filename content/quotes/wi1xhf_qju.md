@@ -10,7 +10,7 @@ text: God will not give me humility or patience or holiness or love as separate
   in the first epistle of John, 'God gave unto us eternal life, and this life is
   in His Son. He that hath the Son hath the life, and that hath not the Son of
   God hath not the life'.
-reference: aIfAndk4Ds
+referenceId: aIfAndk4Ds
 categories:
   - Humility
   - Christ Our Life

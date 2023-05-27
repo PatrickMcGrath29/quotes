@@ -21,7 +21,7 @@ export const useQuoteStore = defineStore("quotes", () => {
     quotes.value = rawQuotes.map((quote: RawQuote): Quote => {
       return {
         ...quote,
-        reference: referencesById.get(quote.reference) as Reference,
+        reference: referencesById.get(quote.referenceId) as Reference,
       };
     });
   };

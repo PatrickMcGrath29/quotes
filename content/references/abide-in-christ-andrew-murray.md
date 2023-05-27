@@ -1,5 +1,5 @@
 ---
 uuid: UUreff0UOd
-reference_name: Abide in Christ
-author_name: Andrew Murray
+referenceName: Abide in Christ
+authorName: Andrew Murray
 ---

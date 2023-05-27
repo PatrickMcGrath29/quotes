@@ -1,5 +1,5 @@
 ---
 uuid: qVwDrrveOR
-reference_name: The Practice of the Presence of God
-author_name: Brother Lawrence
+referenceName: The Practice of the Presence of God
+authorName: Brother Lawrence
 ---

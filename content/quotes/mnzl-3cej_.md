@@ -16,7 +16,7 @@ text: >-
 
 
   As Christ is more excellent than all the world, so this sight transcends all other sights; it is the epitome of a Christian's happiness, the quintessence of evangelical duties, Looking unto Jesus.
-reference: ZEJvDSyAST
+referenceId: ZEJvDSyAST
 categories:
   - Looking to Jesus
 ---

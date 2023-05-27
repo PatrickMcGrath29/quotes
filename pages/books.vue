@@ -12,9 +12,9 @@ const references = await queryContent<Reference>("/references").find();
       >
         <div class="card-body">
           <div class="card-title">
-            {{ reference.reference_name }}
+            {{ reference.referenceName }}
           </div>
-          by {{ reference.author_name }}
+          by {{ reference.authorName }}
         </div>
       </div>
     </div>

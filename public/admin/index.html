@@ -16,7 +16,7 @@
 <script>
   // https://github.com/ai/nanoid
   function nanoid(t = 10) {
-    return crypto
+    const nanoId = crypto
       .getRandomValues(new Uint8Array(t))
       .reduce(
         (t, e) =>
@@ -30,6 +30,8 @@
               : "_"),
         ""
       );
+
+    return nanoId.toLowerCase();
   }
 
   const UuidWidget = createClass({

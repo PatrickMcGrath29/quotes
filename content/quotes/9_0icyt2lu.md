@@ -6,7 +6,7 @@ text: How many of us know that, because Christ is risen, we are therefore alive
   How many of us have such a strong sense that we belong to Another that we dare
   not squander a shilling of our money, or an hour of our time, or any of our
   mental or physical powers?
-reference: aIfAndk4Ds
+referenceId: aIfAndk4Ds
 categories:
   - Christ Our Life
   - Consecration

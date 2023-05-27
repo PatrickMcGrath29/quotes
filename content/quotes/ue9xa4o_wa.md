@@ -6,7 +6,7 @@ text: 'I was greatly impressed by something a great national leader wrote in his
   nothing, cannot we say to our God: "Lord, I want nothing for myself; I want
   all for Thee. I will what Thou willest, and I want to have nothing outside Thy
   will."'
-reference: aIfAndk4Ds
+referenceId: aIfAndk4Ds
 categories:
   - Consecration
   - The Headship of Christ

@@ -6,7 +6,7 @@ text: "I do not pray that you may be delivered from your pains; but I pray God
   will loose you when He thinks fit. Happy those who suffer with Him: accustom
   yourself to suffer in that manner, and seek from Him the strength to endure as
   much, and as long, as He shall judge to be necessary for you."
-reference: qVwDrrveOR
+referenceId: qVwDrrveOR
 categories:
   - Trials
   - Suffering

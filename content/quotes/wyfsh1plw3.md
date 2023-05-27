@@ -7,7 +7,7 @@ text: "God, as Creator, formed man, to be a vessel in which He could show forth
   was not to be independent, or dependent upon himself, but dependent on a God
   of such infinite riches and love. Man was to have the joy of receiving every
   moment out of the fulness of God."
-reference: f-bXBvtyMR
+referenceId: f-bXBvtyMR
 categories:
   - Waiting on God
   - Christ Our Life

@@ -7,7 +7,7 @@ text: In our desire after God, let us keep always in mind that God also has a
   them God finds a theater where He can display His exceeding kindness toward us
   in Christ Jesus. With them God can walk unhindered, toward them He can act
   like the God He is.
-reference: a4BdZxBRz7
+referenceId: a4BdZxBRz7
 categories:
   - Consecration
 ---

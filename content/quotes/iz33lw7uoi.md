@@ -5,7 +5,7 @@ text: "If we give ourselves unreservedly to God, many adjustments may have to be
   personal views. God will not let anything of ourselves remain. His finger will
   touch, point by point, everything that is not of Him, and He will say: 'This
   must go.' Are you willing?"
-reference: aIfAndk4Ds
+referenceId: aIfAndk4Ds
 categories:
   - Consecration
 ---

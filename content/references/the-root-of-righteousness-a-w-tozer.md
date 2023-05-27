@@ -1,5 +1,5 @@
 ---
 uuid: iaeIWmt8Bu
-reference_name: The Root of Righteousness
-author_name: A.W. Tozer
+referenceName: The Root of Righteousness
+authorName: A.W. Tozer
 ---

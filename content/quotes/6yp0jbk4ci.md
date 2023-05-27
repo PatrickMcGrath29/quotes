@@ -7,7 +7,7 @@ text: "'As sorrowful yet always rejoicing': these precious golden worlds teach
   unspeakable and full of glory. There is but one condition: 'I will see you
   again, and your heart shall rejoice, and your joy shall no man take from you'.
   The presence of Jesus, distinctly manifested, cannot but give joy."
-reference: UUreff0UOd
+referenceId: UUreff0UOd
 categories:
   - Suffering
   - The Presence of God

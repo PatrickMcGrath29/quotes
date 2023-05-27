@@ -4,21 +4,22 @@ export interface RawReference extends Reference, ParsedContent {}
 export interface RawQuote extends ParsedContent {
   uuid: string;
   text: string;
-  reference: string;
+  referenceId: string;
   categories: string[];
   link?: string;
 }
 
 export interface Reference {
   uuid: string;
-  reference_name?: string;
-  author_name?: string;
+  referenceName?: string;
+  authorName?: string;
+  link?: string;
 }
 
 export interface Quote {
   uuid: string;
   text: string;
-  reference: Reference;
+  reference?: Reference;
   categories: string[];
   link?: string;
 }

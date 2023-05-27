@@ -6,11 +6,11 @@ text: >-
   toys of this world, when such a Christ is offered to you in the Gospel?
 
 
-  Can the world die for you? Can the world reconcile you to the Father? Can the world advance you to the Kingdom of Heaven? 
+  Can the world die for you? Can the world reconcile you to the Father? Can the world advance you to the Kingdom of Heaven?
 
 
   As Christ is all in all, so let him be the full and complete subject of our desire, and hope, and faith, and love, and joy; let him be in your thoughts the first in the morning, and the last at night.
-reference: ZEJvDSyAST
+referenceId: ZEJvDSyAST
 categories:
   - Looking to Jesus
   - The Beauty of the Lord

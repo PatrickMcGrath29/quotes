@@ -8,7 +8,7 @@ export const useQuotes = async (): Promise<RawQuote[]> => {
   return quotes.map((quote) => {
     return {
       ...quote,
-      reference: quote.reference.toLowerCase(),
+      referenceId: quote.referenceId?.toLowerCase(),
       uuid: quote.uuid.toLowerCase(),
     };
   });
@@ -20,8 +20,9 @@ export const useReferences = async (): Promise<Reference[]> => {
   const toReference = (rawReference: RawReference): Reference => {
     return {
       uuid: rawReference.uuid.toLowerCase(),
-      author_name: rawReference.author_name,
-      reference_name: rawReference.reference_name,
+      authorName: rawReference.authorName,
+      referenceName: rawReference.referenceName,
+      link: rawReference.link,
     };
   };
 
