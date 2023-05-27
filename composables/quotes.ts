@@ -1,6 +1,4 @@
-import { Quote, RawQuote, RawReference, Reference } from "~/types";
-
-const ALL_CATEGORIES_TAG = "All";
+import { RawQuote, RawReference, Reference } from "~/types";
 
 export const useQuotes = async (): Promise<RawQuote[]> => {
   const quotes = await queryContent<RawQuote>("/quotes").find();

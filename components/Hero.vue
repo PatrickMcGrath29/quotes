@@ -42,7 +42,5 @@
 </template>
 
 <script setup lang="ts">
-import { useQuoteStore } from "~/store/quotes";
-
 const quoteStore = useQuoteStore();
 </script>

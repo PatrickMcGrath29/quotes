@@ -1,4 +1,3 @@
-import { defineStore } from "pinia";
 import { Quote, RawQuote, Reference } from "~/types";
 
 const ALL_CATEGORIES_TAG = "All";
@@ -36,7 +35,7 @@ export const useQuoteStore = defineStore("quotes", () => {
     ];
   });
 
-  const filteredQuotes: Ref<Quote[]> = computed(() => {
+  const quotesForCategory: Ref<Quote[]> = computed(() => {
     return activeCategory.value == ALL_CATEGORIES_TAG
       ? quotes.value
       : quotes.value.filter((quote: Quote) =>
@@ -46,7 +45,7 @@ export const useQuoteStore = defineStore("quotes", () => {
 
   return {
     quotes,
-    filteredQuotes,
+    quotesForCategory,
     categories,
     activeCategory,
     fetchQuotes,
