@@ -5,7 +5,7 @@ text: Put away every un-Christian habit from you. If other Christians practice
   these other Christians care to come. Remember the words, "Others may, you
   cannot." Do not condemn or criticize, but seek a better way. God will honor
   you.
-reference: gVNtZHPErX
+referenceId: gVNtZHPErX
 categories:
   - Holiness
   - Conformity to Christ
