@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: main
+  branch: master
   repo: PatrickMcGrath29/quotes
   squash_merges: true
   use_graphql: true
