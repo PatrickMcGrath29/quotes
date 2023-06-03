@@ -12,4 +12,5 @@ referenceId: kui4hcgvfh
 categories:
   - Christ Our Life
   - Conformity to Christ
+  - The Cross
 ---
