@@ -1,6 +1,8 @@
 <template>
-  <div class="inline-block my-2 card bg-slate-800 rounded-md">
+  <div class="inline-block my-3 card bg-slate-800 rounded-md">
     <div class="card-body">
+      <slot name="heading" />
+
       <p class="whitespace-pre-wrap">
         {{ quote.text }}
       </p>

@@ -1,5 +1,5 @@
 <template>
-  <div class="mb-10 p-3 card rounded-md bg-slate-800">
+  <div class="p-3 card rounded-md bg-slate-800">
     <div class="card-body">
       <div class="mb-8">
         <div class="mb-7">

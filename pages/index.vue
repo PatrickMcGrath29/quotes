@@ -9,11 +9,12 @@ const columnSettings = computed(() => {
 
 <template>
   <Container>
-    <Hero />
-    <div class="gap-6 mt-4 mb-10" :class="columnSettings">
+    <Hero class="mb-8" />
+    <HighlightedQuote class="mb-8" />
+    <div class="gap-6 mb-8" :class="columnSettings">
       <QuoteCard
         v-for="quote in quoteStore.quotesForCategory"
-        class="hover:brightness-125 transition-all duration-300 select-text"
+        class="hover:brightness-125 transition-all duration-300"
         :quote="quote"
       />
     </div>
