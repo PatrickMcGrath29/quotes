@@ -5,5 +5,4 @@ text: We all know the value of joy. It alone is the proof that what we have
 referenceId: UUreff0UOd
 categories:
   - Joy
-  - Fulfillment
 ---
