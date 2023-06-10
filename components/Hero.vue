@@ -6,6 +6,11 @@ await useAsyncData("fetch-quotes", () => quoteStore.fetchQuotes());
 <template>
   <div class="p-3 card rounded-md bg-slate-800">
     <div class="card-body">
+      <div>
+        <h1 class="text-xl mb-7 text-center font-semibold">Quote of the Day</h1>
+        <QuoteContent :quote="quoteStore.highlightedQuote" />
+      </div>
+      <hr class="border-slate-700 my-8" />
       <div class="mb-7">
         God has revealed termendous riches about who He is to faithful men and
         women of the past. This website aims to make some of these riches known
@@ -13,16 +18,11 @@ await useAsyncData("fetch-quotes", () => quoteStore.fetchQuotes());
         of the past, and then press on even further in our walk with Christ.
       </div>
       <div>
-        <div class="italic mb-1">
+        <div class="mb-1 text-center italic">
           "... reaching forward to those things which are ahead, I press toward
           the goal for the prize of the upward call of God in Christ Jesus"
         </div>
-        <div class="font-medium">Philippians 3:13-14</div>
-      </div>
-      <hr class="border-slate-700 my-8" />
-      <div>
-        <h1 class="text-xl mb-7 text-center font-semibold">Quote of the Day</h1>
-        <QuoteContent :quote="quoteStore.highlightedQuote" />
+        <div class="font-medium text-center">Philippians 3:13-14</div>
       </div>
     </div>
   </div>
