@@ -12,6 +12,8 @@ export const useIsSmallScren = () => {
   return width.value < 1024;
 };
 
-export const daysSinceEpoch = () => {
-  return Math.ceil(new Date().getTime() / 86400000);
+export const dayOfYear = () => {
+  return Math.floor(
+    (Date.now() - new Date(new Date().getFullYear(), 0, 0)) / 86400000
+  );
 };

@@ -26,7 +26,7 @@ export const useQuoteStore = defineStore("quotes", () => {
   };
 
   const highlightedQuote = computed(() => {
-    const higlightedQuoteIdx = daysSinceEpoch() % quotes.value.length;
+    const higlightedQuoteIdx = dayOfYear() % quotes.value.length;
 
     return quotes.value[higlightedQuoteIdx];
   });

@@ -20,4 +20,8 @@ export default defineNuxtConfig({
   imports: {
     dirs: ["store"],
   },
+  routeRules: {
+    // Revalidate every 3 hours
+    "/": { isr: 60 * 60 * 3 },
+  },
 });
