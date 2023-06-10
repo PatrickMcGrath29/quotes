@@ -10,7 +10,7 @@ const columnSettings = computed(() => {
 <template>
   <Container>
     <Hero class="mb-8" />
-    <HighlightedQuote class="mb-8" />
+    <QuoteFilters class="mb-8" />
     <div class="gap-6 mb-8" :class="columnSettings">
       <QuoteCard
         v-for="quote in quoteStore.quotesForCategory"
