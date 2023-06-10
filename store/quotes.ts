@@ -25,6 +25,12 @@ export const useQuoteStore = defineStore("quotes", () => {
     });
   };
 
+  const highlightedQuote = computed(() => {
+    const higlightedQuoteIdx = daysSinceEpoch() % quotes.value.length;
+
+    return quotes.value[higlightedQuoteIdx];
+  });
+
   const activeCategory = ref(ALL_CATEGORIES_TAG);
   const categories = computed(() => {
     return [
@@ -48,6 +54,7 @@ export const useQuoteStore = defineStore("quotes", () => {
     quotesForCategory,
     categories,
     activeCategory,
+    highlightedQuote,
     fetchQuotes,
   };
 });

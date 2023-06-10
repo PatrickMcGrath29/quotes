@@ -1,8 +1,6 @@
 <script setup lang="ts">
 const quoteStore = useQuoteStore();
 await useAsyncData("fetch-quotes", () => quoteStore.fetchQuotes());
-
-const highlightedQuote = quoteStore.quotes[0];
 </script>
 
 <template>
@@ -24,7 +22,7 @@ const highlightedQuote = quoteStore.quotes[0];
       <hr class="border-slate-700 my-8" />
       <div>
         <h1 class="text-xl mb-7 text-center font-semibold">Quote of the Day</h1>
-        <QuoteContent :quote="highlightedQuote" />
+        <QuoteContent :quote="quoteStore.highlightedQuote" />
       </div>
     </div>
   </div>
