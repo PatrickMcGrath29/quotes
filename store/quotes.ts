@@ -25,11 +25,11 @@ export const useQuoteStore = defineStore("quotes", () => {
     });
   };
 
-  const highlightedQuote = computed(() => {
+  const highlightedQuote = () => {
     const higlightedQuoteIdx = dayOfYear() % quotes.value.length;
 
     return quotes.value[higlightedQuoteIdx];
-  });
+  };
 
   const activeCategory = ref(ALL_CATEGORIES_TAG);
   const categories = computed(() => {
