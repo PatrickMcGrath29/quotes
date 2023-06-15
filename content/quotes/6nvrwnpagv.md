@@ -17,4 +17,5 @@ categories:
   - Suffering
   - Humility
   - The Cross
+link: https://www.ccel.org/ccel/spurgeon/morneve.d0719am.html
 ---
