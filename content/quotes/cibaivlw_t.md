@@ -5,7 +5,7 @@ text: >-
   us, and towards us.
 
 
-  "Ye adulterers and adulteresses, (saith James) know ye not that the friendship of the world is enmity with God?”
+  "Ye adulterers and adulteresses, (saith James) know ye not that the friendship of the world is enmity with God?” (James 4:4)
 referenceId: ZEJvDSyAST
 categories:
   - Holiness
