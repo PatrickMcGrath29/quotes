@@ -18,5 +18,4 @@ referenceId: ZEJvDSyAST
 categories:
   - The Beauty of the Lord
   - Looking to Jesus
-  - null
 ---
