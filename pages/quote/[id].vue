@@ -16,6 +16,7 @@ const router = useRouter();
 
 const navigateBack = () => {
   const referrer = window.history.state.back;
+
   if (referrer == "/") {
     router.back();
   } else {
