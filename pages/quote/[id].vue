@@ -11,6 +11,17 @@ const quote = computed(() => {
 
   return quote as Quote;
 });
+
+const router = useRouter();
+
+const navigateBack = () => {
+  const referrer = window.history.state.back;
+  if (referrer == "/") {
+    router.back();
+  } else {
+    navigateTo("/");
+  }
+};
 </script>
 
 <template>
@@ -18,7 +29,7 @@ const quote = computed(() => {
     <div class="flex items-center flex-col">
       <QuoteCard :quote="quote" class="text-lg" />
       <div class="my-3">
-        <NuxtLink class="btn btn-ghost" to="/">
+        <NuxtLink class="btn btn-ghost" @click="navigateBack">
           <Icon name="ic:sharp-keyboard-backspace" size="1.5em" />
           <span class="p-1">All Quotes</span>
         </NuxtLink>
