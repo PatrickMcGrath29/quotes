@@ -5,6 +5,7 @@
       <QuoteContent
         :quote="quote"
         @click="navigateTo(`/quote/${quote.uuid}`)"
+        class="cursor-pointer"
       />
       <QuoteLinks :quote="quote" />
     </div>
