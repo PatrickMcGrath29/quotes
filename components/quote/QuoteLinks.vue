@@ -15,9 +15,5 @@
 <script setup lang="ts">
 import { Quote } from "~/types";
 
-interface QuoteCardProps {
-  quote: Quote;
-}
-
-defineProps<QuoteCardProps>();
+defineProps<{ quote: Quote }>();
 </script>

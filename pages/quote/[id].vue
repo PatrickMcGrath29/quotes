@@ -3,6 +3,8 @@ import { Quote } from "~/types";
 import { useQuoteStore } from "~/store/quotes";
 
 const route = useRoute();
+const router = useRouter();
+
 const quoteStore = useQuoteStore();
 await useAsyncData("fetch-quotes", () => quoteStore.fetchQuotes());
 
@@ -11,8 +13,6 @@ const quote = computed(() => {
 
   return quote as Quote;
 });
-
-const router = useRouter();
 
 const navigateBack = () => {
   const referrer = window.history.state.back;
@@ -28,7 +28,10 @@ const navigateBack = () => {
 <template>
   <Container>
     <div class="flex items-center flex-col">
-      <QuoteCard :quote="quote" class="text-lg" />
+      <StyledCard class="text-lg">
+        <QuoteContent :quote="quote" />
+        <QuoteLinks :quote="quote" />
+      </StyledCard>
       <div class="my-3">
         <NuxtLink class="btn btn-ghost" @click="navigateBack">
           <Icon name="ic:sharp-keyboard-backspace" size="1.5em" />
