@@ -2,7 +2,11 @@
   <div class="inline-block mb-6 card bg-slate-800 rounded-md">
     <div class="card-body">
       <slot name="heading" />
-      <QuoteContent :quote="quote" />
+      <QuoteContent
+        :quote="quote"
+        @click="navigateTo(`/quote/${quote.uuid}`)"
+      />
+      <QuoteLinks :quote="quote" />
     </div>
   </div>
 </template>
