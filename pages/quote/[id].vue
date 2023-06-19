@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { Quote } from "~/types";
-import { useQuoteStore } from "~/store/quotes";
 
 const route = useRoute();
 const router = useRouter();

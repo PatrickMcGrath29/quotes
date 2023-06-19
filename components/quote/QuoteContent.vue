@@ -1,3 +1,9 @@
+<script setup lang="ts">
+import { Quote } from "~/types";
+
+defineProps<{ quote: Quote }>();
+</script>
+
 <template>
   <div>
     <p class="whitespace-pre-wrap">
@@ -14,9 +20,3 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-import { Quote } from "~/types";
-
-defineProps<{ quote: Quote }>();
-</script>
