@@ -1,7 +1,9 @@
 <template>
-  <div class="text-sm text-blue-300 pt-1 mt-3 flex gap-3">
+  <div
+    class="text-sm text-blue-300 pt-1 mt-3 flex gap-3"
+    v-if="quote.link || quote.reference?.link"
+  >
     <a
-      v-if="quote.link || quote.reference?.link"
       :href="quote.link || quote.reference?.link"
       class="flex items-center gap-1 hover:underline"
       nofollow

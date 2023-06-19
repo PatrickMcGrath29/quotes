@@ -14,13 +14,11 @@ const columnSettings = computed(() => {
     <div class="gap-6 mb-8" :class="columnSettings">
       <StyledCard
         v-for="quote in quoteStore.quotesForCategory"
-        class="hover:brightness-125 transition-all duration-300"
+        class="hover:brightness-125 transition-all duration-300 mb-6 inline-block"
       >
-        <QuoteContent
-          :quote="quote"
-          @click="navigateTo(`/quote/${quote.uuid}`)"
-          class="cursor-pointer"
-        />
+        <NuxtLink :to="`/quote/${quote.uuid}`">
+          <QuoteContent :quote="quote" class="cursor-pointer" />
+        </NuxtLink>
         <QuoteLinks :quote="quote" />
       </StyledCard>
     </div>

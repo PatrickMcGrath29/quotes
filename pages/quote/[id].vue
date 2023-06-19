@@ -28,7 +28,7 @@ const navigateBack = () => {
 <template>
   <Container>
     <div class="flex items-center flex-col">
-      <StyledCard class="text-lg">
+      <StyledCard>
         <QuoteContent :quote="quote" />
         <QuoteLinks :quote="quote" />
       </StyledCard>

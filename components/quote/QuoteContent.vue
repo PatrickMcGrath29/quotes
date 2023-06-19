@@ -4,10 +4,14 @@
       {{ quote.text }}
     </p>
 
-    <h4 class="card-title text-base pt-4" v-if="quote.reference?.referenceName">
-      {{ quote.reference.referenceName }}
-    </h4>
-    <h5 class="text-sm">by {{ quote.reference?.authorName || "Anonymous" }}</h5>
+    <div class="pt-4">
+      <h4 class="card-title text-base" v-if="quote.reference?.referenceName">
+        {{ quote.reference.referenceName }}
+      </h4>
+      <h5 class="text-sm">
+        by {{ quote.reference?.authorName || "Anonymous" }}
+      </h5>
+    </div>
   </div>
 </template>
 
