@@ -7,36 +7,59 @@ const router = useRouter();
 const quoteStore = useQuoteStore();
 await useAsyncData("fetch-quotes", () => quoteStore.fetchQuotes());
 
-const quote = computed(() => {
+const selectedQuote = computed(() => {
   const quote = quoteStore.quotes.find((q: Quote) => q.uuid == route.params.id);
 
-  return quote as Quote;
+  if (quote === undefined) {
+    throw createError({ statusCode: 404, statusMessage: "Quote not found." });
+  }
+
+  return quote;
 });
 
-const navigateBack = () => {
-  const referrer = window.history.state.back;
+const relatedQuotes = computed(() => {
+  return quoteStore.quotes.filter((q) => {
+    if (
+      q.uuid == selectedQuote.value.uuid ||
+      selectedQuote.value.reference === undefined
+    )
+      return false;
 
-  if (referrer == "/") {
-    router.back();
-  } else {
-    navigateTo("/");
-  }
-};
+    return q.reference?.authorName == selectedQuote.value.reference?.authorName;
+  });
+});
 </script>
 
 <template>
   <Container>
-    <div class="flex items-center flex-col">
+    <div class="flex items-center flex-col my-5">
       <StyledCard>
-        <QuoteContent :quote="quote" />
-        <QuoteLinks :quote="quote" />
+        <QuoteContent :quote="selectedQuote" />
+        <QuoteLinks :quote="selectedQuote" />
       </StyledCard>
-      <div class="my-3">
-        <NuxtLink class="btn btn-ghost" @click="navigateBack">
+      <div class="my-8">
+        <NuxtLink
+          class="btn btn-ghost"
+          @click="() => useNavigateBackToPath('/')"
+        >
           <Icon name="ic:sharp-keyboard-backspace" size="1.5em" />
           <span class="p-1">All Quotes</span>
         </NuxtLink>
       </div>
+      <template v-if="relatedQuotes.length > 0">
+        <div class="divider mb-8">
+          <h1 class="font-semibold text-xl">
+            More from {{ selectedQuote.reference?.authorName }}
+          </h1>
+        </div>
+
+        <div :class="useColumnSettings(relatedQuotes.length)" class="gap-8">
+          <StyledCard v-for="quote in relatedQuotes" class="mb-8 inline-block">
+            <QuoteContent :quote="quote" />
+            <QuoteLinks :quote="quote" />
+          </StyledCard>
+        </div>
+      </template>
     </div>
   </Container>
 </template>
