@@ -16,7 +16,7 @@ const highlightedQuote = quoteStore.highlightedQuote();
     </div>
     <hr class="border-slate-700 my-8" />
     <div class="mb-7">
-      God has revealed termendous riches about who He is to faithful men and
+      God has revealed tremendous riches about who He is to faithful men and
       women of the past. This website aims to make some of these riches known to
       more of the body of Christ. May we find encouragement from the saints of
       the past, and then press on even further in our walk with Christ.
