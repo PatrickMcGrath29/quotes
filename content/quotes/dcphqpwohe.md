@@ -13,4 +13,5 @@ text: >-
 referenceId: -wLXpK6lBx
 categories:
   - The Church
+  - Looking to Jesus
 ---
