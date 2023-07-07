@@ -7,4 +7,5 @@ text: "As God is the ever-living, ever-present, ever-acting One, who upholdeth
 referenceId: bcx9hafsa4
 categories:
   - Humility
+  - Dependence on Christ
 ---
