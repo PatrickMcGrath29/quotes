@@ -1,9 +1,5 @@
 export default defineNuxtConfig({
-  app: {
-    head: {
-      title: "Quotes for the body of Christ",
-    },
-  },
+  devtools: true,
   experimental: {
     viewTransition: true,
   },

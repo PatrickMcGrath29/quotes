@@ -28,6 +28,19 @@ const relatedQuotes = computed(() => {
     return q.reference?.authorName == selectedQuote.value.reference?.authorName;
   });
 });
+
+const title = computed(() =>
+  selectedQuote.value.reference != undefined
+    ? selectedQuote.value.reference?.authorName
+    : undefined
+);
+
+useSeoMeta({
+  description: selectedQuote.value.text,
+  ogDescription: selectedQuote.value.text,
+  ogTitle: title,
+  title: title.value,
+});
 </script>
 
 <template>
