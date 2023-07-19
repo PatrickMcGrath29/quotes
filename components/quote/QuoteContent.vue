@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { Quote } from "~/types";
 
-defineProps<{ quote: Quote }>();
+defineProps<{
+  quote: Quote;
+}>();
 </script>
 
 <template>

@@ -16,10 +16,7 @@ const columnSettings = computed(() => {
         v-for="quote in quoteStore.quotesForCategory"
         class="hover:brightness-125 transition-all duration-300 mb-6 inline-block"
       >
-        <NuxtLink :to="`/quote/${quote.uuid}`">
-          <QuoteContent :quote="quote" class="cursor-pointer" />
-        </NuxtLink>
-        <QuoteLinks :quote="quote" />
+        <QuoteCard :quote="quote" :withLink="true" />
       </StyledCard>
     </div>
   </Container>

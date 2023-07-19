@@ -10,8 +10,7 @@ const highlightedQuote = quoteStore.highlightedQuote();
     <div>
       <h1 class="text-xl mb-7 text-center font-semibold">Quote of the Day</h1>
       <ClientOnly>
-        <QuoteContent :quote="highlightedQuote" />
-        <QuoteLinks :quote="highlightedQuote" />
+        <QuoteCard :quote="highlightedQuote" :withLink="true" />
       </ClientOnly>
     </div>
     <hr class="border-slate-700 my-8" />
