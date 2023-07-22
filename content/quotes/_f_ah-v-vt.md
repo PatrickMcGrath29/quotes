@@ -7,7 +7,7 @@ text: >-
   at the beginning of our communion with Christ.
 
 
-  When Christ calls a man, He bids him come and die..
+  When Christ calls a man, He bids him come and die.
 referenceId: z6fobdev3-
 categories:
   - The Cross
