@@ -12,7 +12,6 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
     "nuxt-icon",
     "@pinia/nuxt",
-    "@nuxthq/studio",
   ],
   imports: {
     dirs: ["store"],
