@@ -1,7 +1,9 @@
 import { RawQuote, RawReference, Reference } from "~/types";
 
 export const useQuotes = async (): Promise<RawQuote[]> => {
-  const quotes = await queryContent<RawQuote>("/quotes").find();
+  const quotes = await queryContent<RawQuote>("/quotes")
+    .sort({ uuid: 1 })
+    .find();
 
   return quotes.map((quote) => {
     return {
@@ -13,7 +15,9 @@ export const useQuotes = async (): Promise<RawQuote[]> => {
 };
 
 export const useReferences = async (): Promise<Reference[]> => {
-  const references = await queryContent<RawReference>("/references").find();
+  const references = await queryContent<RawReference>("/references")
+    .sort({ uuid: 1 })
+    .find();
 
   const toReference = (rawReference: RawReference): Reference => {
     return {

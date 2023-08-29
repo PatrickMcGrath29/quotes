@@ -16,4 +16,8 @@ export default defineNuxtConfig({
   imports: {
     dirs: ["store"],
   },
+  alias: {
+    "micromark/lib/preprocess.js": "micromark",
+    "micromark/lib/postprocess.js": "micromark",
+  },
 });
