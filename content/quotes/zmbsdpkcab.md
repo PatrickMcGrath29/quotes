@@ -3,7 +3,7 @@ uuid: zmbsdpkcab
 text: >-
   If once we learn that to be nothing before God is the glory of the creature,
   the spirit of Jesus, the joy of Heaven - we shall welcome with our whole heart
-  the disciple we may have in serving even those who try or vex us.
+  the discipline we may have in serving even those who try or vex us.
 
 
   When our own heart is set upon this, the true sanctification, we shall study each word of Jesus on self-abasement with new zest, and no place will be too low, and no stooping too deep, and no service too mean or too long continued, if we may but share and prove the fellowship with Him who spoke, "I am among you as He that serves" (Luke 22:27).
