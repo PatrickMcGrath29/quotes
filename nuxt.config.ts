@@ -10,8 +10,4 @@ export default defineNuxtConfig({
     'nuxt-icon',
     '@pinia/nuxt',
   ],
-  alias: {
-    'micromark/lib/preprocess.js': 'micromark',
-    'micromark/lib/postprocess.js': 'micromark',
-  },
 })
