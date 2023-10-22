@@ -3,9 +3,6 @@ export default defineNuxtConfig({
   experimental: {
     viewTransition: true,
   },
-  pinia: {
-    autoImports: ['defineStore'],
-  },
   modules: [
     '@nuxt/content',
     '@nuxtjs/tailwindcss',
@@ -13,9 +10,6 @@ export default defineNuxtConfig({
     'nuxt-icon',
     '@pinia/nuxt',
   ],
-  imports: {
-    dirs: ['store'],
-  },
   alias: {
     'micromark/lib/preprocess.js': 'micromark',
     'micromark/lib/postprocess.js': 'micromark',
