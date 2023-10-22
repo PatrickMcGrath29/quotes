@@ -10,4 +10,5 @@ text: >-
 referenceId: aIfAndk4Ds
 categories:
   - Conformity to Christ
+  - Christ Our Life
 ---
