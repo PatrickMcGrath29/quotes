@@ -1,46 +1,44 @@
 <script setup lang="ts">
-import { Quote } from "~/types";
+import type { Quote } from '~/types'
 
-const route = useRoute();
-const router = useRouter();
+const route = useRoute()
 
-const quoteStore = useQuoteStore();
-await useAsyncData("fetch-quotes", () => quoteStore.fetchQuotes());
+const quoteStore = useQuoteStore()
+await useAsyncData('fetch-quotes', () => quoteStore.fetchQuotes())
 
 const selectedQuote = computed(() => {
-  const quote = quoteStore.quotes.find((q: Quote) => q.uuid == route.params.id);
+  const quote = quoteStore.quotes.find((q: Quote) => q.uuid === route.params.id)
 
-  if (quote === undefined) {
-    throw createError({ statusCode: 404, statusMessage: "Quote not found." });
-  }
+  if (quote === undefined)
+    throw createError({ statusCode: 404, statusMessage: 'Quote not found.' })
 
-  return quote;
-});
+  return quote
+})
 
 const relatedQuotes = computed(() => {
   return quoteStore.quotes.filter((q) => {
     if (
-      q.uuid == selectedQuote.value.uuid ||
-      selectedQuote.value.reference === undefined
+      q.uuid === selectedQuote.value.uuid
+      || selectedQuote.value.reference === undefined
     )
-      return false;
+      return false
 
-    return q.reference?.authorName == selectedQuote.value.reference?.authorName;
-  });
-});
+    return q.reference?.authorName === selectedQuote.value.reference?.authorName
+  })
+})
 
 const title = computed(() =>
-  selectedQuote.value.reference != undefined
+  selectedQuote.value.reference !== undefined
     ? selectedQuote.value.reference?.authorName
-    : undefined
-);
+    : undefined,
+)
 
 useSeoMeta({
   description: selectedQuote.value.text,
   ogDescription: selectedQuote.value.text,
   ogTitle: title,
   title: title.value,
-});
+})
 </script>
 
 <template>
@@ -66,8 +64,8 @@ useSeoMeta({
         </div>
 
         <div :class="useColumnSettings(relatedQuotes.length)" class="gap-8">
-          <StyledCard v-for="quote in relatedQuotes" class="mb-8 inline-block">
-            <QuoteCard :quote="quote" :withLink="true" />
+          <StyledCard v-for="(quote, idx) in relatedQuotes" :key="idx" class="mb-8 inline-block">
+            <QuoteCard :quote="quote" :with-link="true" />
           </StyledCard>
         </div>
       </template>

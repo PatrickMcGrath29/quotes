@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { Quote } from "~/types";
+import type { Quote } from '~/types'
 
-defineProps<{ quote: Quote; withLink?: Boolean }>();
+defineProps<{ quote: Quote; withLink?: boolean }>()
 </script>
 
 <template>

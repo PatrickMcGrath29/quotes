@@ -1,12 +1,12 @@
 <script setup lang="ts">
 useHead({
   titleTemplate: (titleChunk) => {
-    return titleChunk ? `Quotes - ${titleChunk}` : "Quotes";
+    return titleChunk ? `Quotes - ${titleChunk}` : 'Quotes'
   },
   htmlAttrs: {
-    lang: "en",
+    lang: 'en',
   },
-});
+})
 </script>
 
 <template>

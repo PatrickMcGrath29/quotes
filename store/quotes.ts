@@ -1,53 +1,54 @@
-import { Quote, RawQuote, Reference } from "~/types";
+import type { Quote, RawQuote, Reference } from '~/types'
 
-const ALL_CATEGORIES_TAG = "All";
+const ALL_CATEGORIES_TAG = 'All'
 
-export const useQuoteStore = defineStore("quotes", () => {
-  const quotes: Ref<Quote[]> = ref([]);
+export const useQuoteStore = defineStore('quotes', () => {
+  const quotes: Ref<Quote[]> = ref([])
 
   const fetchQuotes = async () => {
-    if (quotes.value.length > 0) return;
+    if (quotes.value.length > 0)
+      return
 
     const [rawQuotes, rawReferences] = await Promise.all([
       useQuotes(),
       useReferences(),
-    ]);
+    ])
 
     const referencesById: Map<string, Reference> = new Map(
-      rawReferences.map((reference: Reference) => [reference.uuid, reference])
-    );
+      rawReferences.map((reference: Reference) => [reference.uuid, reference]),
+    )
 
     quotes.value = rawQuotes.map((quote: RawQuote): Quote => {
       return {
         ...quote,
         reference: referencesById.get(quote.referenceId) as Reference,
-      };
-    });
-  };
+      }
+    })
+  }
 
   const highlightedQuote = () => {
-    const higlightedQuoteIdx = dayOfYear() % quotes.value.length;
+    const higlightedQuoteIdx = dayOfYear() % quotes.value.length
 
-    return quotes.value[higlightedQuoteIdx];
-  };
+    return quotes.value[higlightedQuoteIdx]
+  }
 
-  const activeCategory = ref(ALL_CATEGORIES_TAG);
+  const activeCategory = ref(ALL_CATEGORIES_TAG)
   const categories = computed(() => {
     return [
       ALL_CATEGORIES_TAG,
       ...new Set(
-        quotes.value.flatMap((quote: Quote) => quote.categories).sort()
+        quotes.value.flatMap((quote: Quote) => quote.categories).sort(),
       ),
-    ];
-  });
+    ]
+  })
 
   const quotesForCategory: Ref<Quote[]> = computed(() => {
-    return activeCategory.value == ALL_CATEGORIES_TAG
+    return activeCategory.value === ALL_CATEGORIES_TAG
       ? quotes.value
       : quotes.value.filter((quote: Quote) =>
-          quote.categories.includes(activeCategory.value)
-        );
-  });
+        quote.categories.includes(activeCategory.value),
+      )
+  })
 
   return {
     quotes,
@@ -56,5 +57,5 @@ export const useQuoteStore = defineStore("quotes", () => {
     activeCategory,
     highlightedQuote,
     fetchQuotes,
-  };
-});
+  }
+})

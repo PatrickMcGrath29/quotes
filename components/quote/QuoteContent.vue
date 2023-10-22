@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { Quote } from "~/types";
+import type { Quote } from '~/types'
 
 defineProps<{
-  quote: Quote;
-}>();
+  quote: Quote
+}>()
 </script>
 
 <template>
@@ -13,7 +13,7 @@ defineProps<{
     </p>
 
     <div class="pt-4">
-      <h4 class="card-title text-base" v-if="quote.reference?.referenceName">
+      <h4 v-if="quote.reference?.referenceName" class="card-title text-base">
         {{ quote.reference.referenceName }}
       </h4>
       <h5 class="text-sm">

@@ -4,20 +4,20 @@ export default defineNuxtConfig({
     viewTransition: true,
   },
   pinia: {
-    autoImports: ["defineStore"],
+    autoImports: ['defineStore'],
   },
   modules: [
-    "@nuxt/content",
-    "@nuxtjs/tailwindcss",
-    "@vueuse/nuxt",
-    "nuxt-icon",
-    "@pinia/nuxt",
+    '@nuxt/content',
+    '@nuxtjs/tailwindcss',
+    '@vueuse/nuxt',
+    'nuxt-icon',
+    '@pinia/nuxt',
   ],
   imports: {
-    dirs: ["store"],
+    dirs: ['store'],
   },
   alias: {
-    "micromark/lib/preprocess.js": "micromark",
-    "micromark/lib/postprocess.js": "micromark",
+    'micromark/lib/preprocess.js': 'micromark',
+    'micromark/lib/postprocess.js': 'micromark',
   },
-});
+})

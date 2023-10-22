@@ -1,7 +1,13 @@
+<script setup lang="ts">
+import type { Quote } from '~/types'
+
+defineProps<{ quote: Quote }>()
+</script>
+
 <template>
   <div
-    class="text-sm text-blue-300 pt-1 mt-3 flex gap-3"
     v-if="quote.link || quote.reference?.link"
+    class="text-sm text-blue-300 pt-1 mt-3 flex gap-3"
   >
     <a
       :href="quote.link || quote.reference?.link"
@@ -13,9 +19,3 @@
     </a>
   </div>
 </template>
-
-<script setup lang="ts">
-import { Quote } from "~/types";
-
-defineProps<{ quote: Quote }>();
-</script>

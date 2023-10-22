@@ -1,19 +1,21 @@
 <script setup lang="ts">
-const quoteStore = useQuoteStore();
-await useAsyncData("fetch-quotes", () => quoteStore.fetchQuotes());
+const quoteStore = useQuoteStore()
+await useAsyncData('fetch-quotes', () => quoteStore.fetchQuotes())
 
-const highlightedQuote = quoteStore.highlightedQuote();
+const highlightedQuote = quoteStore.highlightedQuote()
 </script>
 
 <template>
   <StyledCard>
     <div>
-      <h1 class="text-xl mb-7 text-center font-semibold">Quote of the Day</h1>
+      <h1 class="text-xl mb-7 text-center font-semibold">
+        Quote of the Day
+      </h1>
       <ClientOnly>
-        <QuoteCard :quote="highlightedQuote" :withLink="true" />
+        <QuoteCard :quote="highlightedQuote" :with-link="true" />
       </ClientOnly>
     </div>
-    <hr class="border-slate-700 my-8" />
+    <hr class="border-slate-700 my-8">
     <div class="mb-7">
       God has revealed tremendous riches about who He is to faithful men and
       women of the past. This website aims to make some of these riches known to
@@ -25,7 +27,9 @@ const highlightedQuote = quoteStore.highlightedQuote();
         "... reaching forward to those things which are ahead, I press toward
         the goal for the prize of the upward call of God in Christ Jesus"
       </div>
-      <div class="font-medium text-center">Philippians 3:13-14</div>
+      <div class="font-medium text-center">
+        Philippians 3:13-14
+      </div>
     </div>
   </StyledCard>
 </template>
