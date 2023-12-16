@@ -29,7 +29,7 @@ const matchingQuotes = computed(() => {
     </button>
   </div>
   <dialog id="filterSearch" class="modal">
-    <div class="modal-box">
+    <div class="modal-box h-full">
       <div class="my-2 text-center flex justify-around space-x-2">
         <input v-model="searchString" type="text" placeholder="Search" class="input input-md input-bordered input-primary w-full max-w-xs">
         <div class="inline-block">
@@ -40,7 +40,7 @@ const matchingQuotes = computed(() => {
           </form>
         </div>
       </div>
-      <div class="overflow-y-auto max-h-screen divide-y divide-slate-700">
+      <div class="overflow-y-auto divide-y divide-slate-700">
         <NuxtLink v-for="quote in matchingQuotes" :key="quote.uuid" class="card py-5 px-3 rounded-none" :to="`quote/${quote.uuid}`">
           <div class="flex flex-col">
             <div class="text-sm font-bold mb-2">
@@ -54,6 +54,9 @@ const matchingQuotes = computed(() => {
             </h5>
           </div>
         </NuxtLink>
+        <div v-if="matchingQuotes.length === 0" class="text-center my-5">
+          No results found.
+        </div>
       </div>
     </div>
   </dialog>
