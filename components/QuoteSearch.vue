@@ -4,6 +4,10 @@ const quoteStore = useQuoteStore()
 const searchString = ref('')
 
 const matchingQuotes = computed(() => {
+  const stripString = (text: string) => {
+    return text.replace(/[^a-zA-Z0-9]/g, '').toLowerCase()
+  }
+
   return quoteStore.quotes.filter((quote) => {
     const textToSearch = [
       quote.text,
@@ -12,7 +16,7 @@ const matchingQuotes = computed(() => {
     ]
 
     return textToSearch.some((text) => {
-      return text?.toLowerCase().includes(searchString.value.toLowerCase())
+      return text !== undefined && text !== null && stripString(text).includes(stripString(searchString.value))
     })
   })
 })
@@ -26,7 +30,7 @@ const matchingQuotes = computed(() => {
   </div>
   <dialog id="filterSearch" class="modal">
     <div class="modal-box">
-      <div class="my-2 text-center flex justify-around">
+      <div class="my-2 text-center flex justify-around space-x-2">
         <input v-model="searchString" type="text" placeholder="Search" class="input input-md input-bordered input-primary w-full max-w-xs">
         <div class="inline-block">
           <form method="dialog">
