@@ -37,7 +37,7 @@ export const useQuoteStore = defineStore('quotes', () => {
     return [
       ALL_CATEGORIES_TAG,
       ...new Set(
-        quotes.value.flatMap((quote: Quote) => quote.categories).sort(),
+        quotes.value.flatMap((quote: Quote) => quote.categories ? quote.categories : []).sort(),
       ),
     ]
   })
@@ -46,7 +46,7 @@ export const useQuoteStore = defineStore('quotes', () => {
     return activeCategory.value === ALL_CATEGORIES_TAG
       ? quotes.value
       : quotes.value.filter((quote: Quote) =>
-        quote.categories.includes(activeCategory.value),
+        quote.categories?.includes(activeCategory.value),
       )
   })
 
