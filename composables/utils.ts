@@ -11,9 +11,17 @@ export function useIsSmallScren() {
   return width.value < 1024
 }
 
+export function smartEllipsis(text: string, length: number) {
+  if (text.length > length) {
+    const index = text.substring(0, length - 1)
+    text = `${index.substring(0, index.lastIndexOf(' '))}...`
+  }
+  return text
+}
+
 export function dayOfYear() {
   return Math.floor(
-    (Date.now() - new Date(new Date().getFullYear(), 0, 0)) / 86400000,
+    (Date.now() - new Date(new Date().getFullYear(), 0, 0).getTime()) / 86400000,
   )
 }
 

@@ -10,7 +10,11 @@ const columnSettings = computed(() => {
 <template>
   <Container>
     <Hero class="mb-8" />
-    <QuoteFilters class="mb-8" />
+    <div class="p-5 card rounded-md bg-slate-800 mb-8">
+      <Filters />
+      <QuoteSearch />
+    </div>
+
     <div class="gap-6 mb-8" :class="columnSettings">
       <StyledCard
         v-for="(quote, idx) in quoteStore.quotesForCategory"

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 interface PillButtonProps {
   isActive: boolean
-  clickHandler: Function
+  clickHandler: (payload: MouseEvent) => void
 }
 
 defineProps<PillButtonProps>()
