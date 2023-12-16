@@ -31,10 +31,13 @@
             Quotes
           </NuxtLink>
         </div>
-        <div class="navbar-end hidden lg:flex">
-          <ul class="menu menu-horizontal px-1 gap-1">
-            <HeaderItems />
-          </ul>
+        <div class="navbar-end">
+          <QuoteSearch :show-icon="true" />
+          <div class="hidden lg:flex">
+            <ul class="menu menu-horizontal px-1 gap-1">
+              <HeaderItems />
+            </ul>
+          </div>
         </div>
       </div>
     </Container>
