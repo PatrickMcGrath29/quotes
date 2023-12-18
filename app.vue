@@ -10,7 +10,7 @@ useHead({
 </script>
 
 <template>
-  <div>
+  <div tabindex="0" class="outline-none">
     <Header />
     <NuxtPage />
   </div>
