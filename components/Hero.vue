@@ -15,21 +15,5 @@ const highlightedQuote = quoteStore.highlightedQuote()
         <QuoteCard :quote="highlightedQuote" :with-link="true" />
       </ClientOnly>
     </div>
-    <hr class="border-slate-700 my-8">
-    <div class="mb-7">
-      God has revealed tremendous riches about who He is to faithful men and
-      women of the past. This website aims to make some of these riches known to
-      more of the body of Christ. May we find encouragement from the saints of
-      the past, and then press on even further in our walk with Christ.
-    </div>
-    <div>
-      <div class="mb-1 text-center italic">
-        "... reaching forward to those things which are ahead, I press toward
-        the goal for the prize of the upward call of God in Christ Jesus"
-      </div>
-      <div class="font-medium text-center">
-        Philippians 3:13-14
-      </div>
-    </div>
   </StyledCard>
 </template>
