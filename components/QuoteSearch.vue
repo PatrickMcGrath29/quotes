@@ -36,7 +36,7 @@ const matchingQuotes = computed(() => {
   </div>
   <dialog id="filterSearch" class="modal">
     <div class="modal-box max-w-2xl flex flex-col h-full overflow-hidden max-md:w-full max-md:max-h-full max-md:rounded-none">
-      <div class="my-2 text-center flex justify-center gap-1 space-x-2">
+      <div class="my-2 text-center flex justify-center gap-1 space-x-2 pb-4 border-primary border-b">
         <input v-model="searchString" type="text" placeholder="Search" class="input input-md input-bordered input-primary w-full">
         <div class="inline-block">
           <button class="btn btn-primary" onclick="filterSearch.close()">

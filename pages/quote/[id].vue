@@ -45,7 +45,7 @@ useSeoMeta({
   <Container>
     <div class="flex items-center flex-col my-5">
       <StyledCard>
-        <QuoteCard :quote="selectedQuote" />
+        <QuoteText :quote="selectedQuote" />
       </StyledCard>
       <div class="my-8">
         <NuxtLink
@@ -64,9 +64,7 @@ useSeoMeta({
         </div>
 
         <div :class="useColumnSettings(relatedQuotes.length)" class="gap-8">
-          <StyledCard v-for="(quote, idx) in relatedQuotes" :key="idx" class="mb-8 inline-block">
-            <QuoteCard :quote="quote" :with-link="true" />
-          </StyledCard>
+          <QuoteLinkCard v-for="(quote, idx) in relatedQuotes" :key="idx" :quote="quote" class="mb-8 inline-block" />
         </div>
       </template>
     </div>

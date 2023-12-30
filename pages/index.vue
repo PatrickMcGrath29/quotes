@@ -10,18 +10,18 @@ const columnSettings = computed(() => {
 <template>
   <Container>
     <Hero class="mb-8" />
+
     <div class="p-5 card rounded-md bg-slate-800 mb-8">
       <Filters />
     </div>
 
     <div class="gap-6 mb-8" :class="columnSettings">
-      <StyledCard
+      <QuoteLinkCard
         v-for="(quote, idx) in quoteStore.quotesForCategory"
         :key="idx"
-        class="hover:brightness-125 transition-all duration-300 mb-6 inline-block"
-      >
-        <QuoteCard :quote="quote" :with-link="true" />
-      </StyledCard>
+        :quote="quote"
+        class="mb-6 inline-block"
+      />
     </div>
   </Container>
 </template>

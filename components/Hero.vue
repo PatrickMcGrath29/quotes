@@ -12,7 +12,9 @@ const highlightedQuote = quoteStore.highlightedQuote()
         Quote of the Day
       </h1>
       <ClientOnly>
-        <QuoteCard :quote="highlightedQuote" :with-link="true" />
+        <NuxtLink :to="`/quote/${highlightedQuote.uuid}`" class="cursor-pointer">
+          <QuoteText :quote="highlightedQuote" />
+        </NuxtLink>
       </ClientOnly>
     </div>
   </StyledCard>
