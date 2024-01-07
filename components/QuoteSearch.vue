@@ -49,23 +49,23 @@ const matchingSearchTerms: Ref<string[]> = computed(() => {
   </div>
   <dialog id="filterSearch" class="modal">
     <div class="modal-box max-w-2xl flex flex-col h-full overflow-hidden max-md:w-full max-md:max-h-full max-md:rounded-none">
-      <div class="">
-        <div class="mt-1 mb-4 text-center flex justify-center gap-1 space-x-2">
-          <input v-model="searchString" type="text" placeholder="Search" class="input input-md input-bordered input-primary w-full">
-          <div class="inline-block">
-            <button class="btn btn-primary" onclick="filterSearch.close()">
-              Close
-            </button>
-          </div>
-        </div>
-        <div v-if="matchingSearchTerms.length > 0" class="mb-4 border rounded-md border-primary px-2 py-3">
-          <div class="flex gap-2 overflow-x-auto no-scrollbar snap-x">
-            <button v-for="searchTerm in matchingSearchTerms" :key="searchTerm" class="text-nowrap snap-start btn btn-sm btn-ghost break-keep" @click="searchString = searchTerm">
-              {{ searchTerm }}
-            </button>
-          </div>
+      <div class="mt-1 mb-4 text-center flex justify-center gap-1 space-x-2">
+        <input v-model="searchString" type="text" placeholder="Search" class="input input-md input-bordered input-primary w-full">
+        <div class="inline-block">
+          <button class="btn btn-primary" onclick="filterSearch.close()">
+            Close
+          </button>
         </div>
       </div>
+
+      <div v-if="matchingSearchTerms.length > 0" class="mb-4 border rounded-md border-primary px-2 py-3">
+        <div class="flex gap-2 overflow-x-auto no-scrollbar snap-x">
+          <button v-for="searchTerm in matchingSearchTerms" :key="searchTerm" class="text-nowrap snap-start btn btn-sm btn-ghost break-keep" @click="searchString = searchTerm">
+            {{ searchTerm }}
+          </button>
+        </div>
+      </div>
+
       <div class="overflow-y-auto max-h-screen divide-y divide-slate-700">
         <NuxtLink v-for="quote in matchingQuotes" :key="quote.uuid" class="card py-5 px-3 rounded-none" :to="`/quote/${quote.uuid}`" onclick="filterSearch.close()">
           <div class="flex flex-col">
