@@ -59,22 +59,22 @@ function closeModal() {
       <div class="mt-1 mb-4 text-center flex justify-center gap-1 space-x-2">
         <input v-model="searchString" type="text" placeholder="Search" class="input input-md input-bordered input-primary w-full">
         <div class="inline-block">
-          <button class="btn btn-primary" @click="closeModal">
+          <button class="btn btn-primary" @click="closeModal()">
             Close
           </button>
         </div>
       </div>
 
       <div v-if="matchingSearchTerms.length > 0" class="mb-4 border rounded-md border-primary px-2 py-3">
-        <div class="flex gap-2 overflow-x-auto no-scrollbar snap-x">
+        <div class="flex gap-2 overflow-x-auto scrollbar-none snap-x">
           <button v-for="searchTerm in matchingSearchTerms" :key="searchTerm" class="text-nowrap snap-start btn btn-sm btn-ghost break-keep" @click="searchString = searchTerm">
             {{ searchTerm }}
           </button>
         </div>
       </div>
 
-      <div class="overflow-y-auto max-h-screen divide-y divide-slate-700">
-        <NuxtLink v-for="quote in matchingQuotes" :key="quote.uuid" class="card py-5 px-3 rounded-none" :to="`/quote/${quote.uuid}`" onclick="filterSearch.close()">
+      <div class="overflow-y-auto scrollbar-thin scrollbar-thumb-primary  max-h-screen divide-y divide-slate-700">
+        <NuxtLink v-for="quote in matchingQuotes" :key="quote.uuid" class="card py-5 px-3 rounded-none" :to="`/quote/${quote.uuid}`" @click="closeModal()">
           <div class="flex flex-col">
             <div class="text-sm mb-2">
               {{ smartEllipsis(quote.text, 175) }}

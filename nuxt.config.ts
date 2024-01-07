@@ -10,9 +10,6 @@ export default defineNuxtConfig({
       ],
     },
   },
-  css: [
-    '@/styles/global.css',
-  ],
   modules: [
     '@nuxt/content',
     '@nuxtjs/tailwindcss',
