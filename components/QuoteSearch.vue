@@ -38,6 +38,13 @@ const matchingSearchTerms: Ref<string[]> = computed(() => {
 
   return [...new Set(possibleTerms)]
 })
+
+function closeModal() {
+  const modal = document.getElementById('filterSearch') as HTMLDialogElement
+
+  modal.close()
+  searchString.value = ''
+}
 </script>
 
 <template>
@@ -52,7 +59,7 @@ const matchingSearchTerms: Ref<string[]> = computed(() => {
       <div class="mt-1 mb-4 text-center flex justify-center gap-1 space-x-2">
         <input v-model="searchString" type="text" placeholder="Search" class="input input-md input-bordered input-primary w-full">
         <div class="inline-block">
-          <button class="btn btn-primary" onclick="filterSearch.close()">
+          <button class="btn btn-primary" @click="closeModal">
             Close
           </button>
         </div>
