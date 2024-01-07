@@ -25,23 +25,45 @@ const matchingQuotes = computed(() => {
     })
   })
 })
+
+const matchingSearchTerms: Ref<string[]> = computed(() => {
+  if (searchString.value.length < 3)
+    return []
+
+  const possibleTerms = matchingQuotes.value.flatMap((quote) => {
+    return [quote.reference?.authorName, quote.reference?.referenceName]
+  }).filter((searchTerm) => {
+    return searchTerm !== undefined && searchTerm !== searchString.value
+  }) as string[]
+
+  return [...new Set(possibleTerms)]
+})
 </script>
 
 <template>
   <div class="text-center">
     <button class="btn btn-ghost" onclick="filterSearch.showModal()">
-      <svg v-if="showIcon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+      <Icon v-if="showIcon" name="material-symbols:search" size="25px" />
       <span v-else>Search Quotes</span>
     </button>
   </div>
   <dialog id="filterSearch" class="modal">
     <div class="modal-box max-w-2xl flex flex-col h-full overflow-hidden max-md:w-full max-md:max-h-full max-md:rounded-none">
-      <div class="my-2 text-center flex justify-center gap-1 space-x-2 pb-4 border-primary border-b">
-        <input v-model="searchString" type="text" placeholder="Search" class="input input-md input-bordered input-primary w-full">
-        <div class="inline-block">
-          <button class="btn btn-primary" onclick="filterSearch.close()">
-            Close
-          </button>
+      <div class="">
+        <div class="mt-1 mb-4 text-center flex justify-center gap-1 space-x-2">
+          <input v-model="searchString" type="text" placeholder="Search" class="input input-md input-bordered input-primary w-full">
+          <div class="inline-block">
+            <button class="btn btn-primary" onclick="filterSearch.close()">
+              Close
+            </button>
+          </div>
+        </div>
+        <div v-if="matchingSearchTerms.length > 0" class="mb-4 border rounded-md border-primary px-2 py-3">
+          <div class="flex gap-2 overflow-x-auto no-scrollbar snap-x">
+            <button v-for="searchTerm in matchingSearchTerms" :key="searchTerm" class="text-nowrap snap-start btn btn-sm btn-ghost break-keep" @click="searchString = searchTerm">
+              {{ searchTerm }}
+            </button>
+          </div>
         </div>
       </div>
       <div class="overflow-y-auto max-h-screen divide-y divide-slate-700">
