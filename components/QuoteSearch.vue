@@ -52,6 +52,10 @@ watch(Command_K, (v) => {
     openModal()
 })
 
+watch(searchString, () => {
+  activeQuoteIdx.value = 0
+})
+
 onKeyStroke('ArrowDown', (e) => {
   if (isFilterSearchModalOpen() && activeQuoteIdx.value < matchingQuotes.value.length - 1) {
     activeQuoteIdx.value++
@@ -74,6 +78,13 @@ onKeyStroke('Enter', () => {
   if (selectedQuote) {
     closeModal()
     navigateTo(`/quote/${matchingQuotes.value[activeQuoteIdx.value].uuid}`)
+  }
+})
+
+onKeyStroke('Escape', (e) => {
+  if (isFilterSearchModalOpen()) {
+    closeModal()
+    e.preventDefault()
   }
 })
 
