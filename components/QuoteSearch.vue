@@ -7,6 +7,9 @@ defineProps({
 })
 const quoteStore = useQuoteStore()
 const searchString = ref('')
+const activeQuoteIdx = ref(0)
+
+const { Command_K } = useMagicKeys()
 
 const matchingQuotes = computed(() => {
   const stripString = (text: string) => {
@@ -39,17 +42,58 @@ const matchingSearchTerms: Ref<string[]> = computed(() => {
   return [...new Set(possibleTerms)]
 })
 
+function isFilterSearchModalOpen() {
+  const modal = document.getElementById('filterSearch') as HTMLDialogElement
+  return modal.open
+}
+
+watch(Command_K, (v) => {
+  if (v && !isFilterSearchModalOpen())
+    openModal()
+})
+
+onKeyStroke('ArrowDown', (e) => {
+  if (isFilterSearchModalOpen() && activeQuoteIdx.value < matchingQuotes.value.length - 1) {
+    activeQuoteIdx.value++
+    e.preventDefault()
+  }
+})
+
+onKeyStroke('ArrowUp', (e) => {
+  if (isFilterSearchModalOpen() && activeQuoteIdx.value > 0) {
+    activeQuoteIdx.value--
+    e.preventDefault()
+  }
+})
+
+onKeyStroke('Enter', () => {
+  if (!isFilterSearchModalOpen())
+    return
+
+  const selectedQuote = matchingQuotes.value[activeQuoteIdx.value]
+  if (selectedQuote) {
+    closeModal()
+    navigateTo(`/quote/${matchingQuotes.value[activeQuoteIdx.value].uuid}`)
+  }
+})
+
 function closeModal() {
   const modal = document.getElementById('filterSearch') as HTMLDialogElement
 
   modal.close()
   searchString.value = ''
 }
+
+function openModal() {
+  const modal = document.getElementById('filterSearch') as HTMLDialogElement
+
+  modal.showModal()
+}
 </script>
 
 <template>
   <div class="text-center">
-    <button class="btn btn-ghost" onclick="filterSearch.showModal()">
+    <button class="btn btn-ghost" @click="openModal()">
       <Icon v-if="showIcon" name="material-symbols:search" size="25px" />
       <span v-else>Search Quotes</span>
     </button>
@@ -74,7 +118,7 @@ function closeModal() {
       </div>
 
       <div class="overflow-y-auto scrollbar-thin scrollbar-thumb-primary  max-h-screen divide-y divide-slate-700">
-        <NuxtLink v-for="quote in matchingQuotes" :key="quote.uuid" class="card py-5 px-3 rounded-none" :to="`/quote/${quote.uuid}`" @click="closeModal()">
+        <NuxtLink v-for="(quote, idx) in matchingQuotes" :key="quote.uuid" class="card py-5 px-3 rounded-none hover:bg-gray-900" :to="`/quote/${quote.uuid}`" :class="{ 'bg-gray-900': idx === activeQuoteIdx }" @click="closeModal()">
           <div class="flex flex-col">
             <div class="text-sm mb-2">
               {{ smartEllipsis(quote.text, 175) }}
