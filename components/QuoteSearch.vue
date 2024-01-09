@@ -77,7 +77,7 @@ onKeyStroke('Enter', () => {
   const selectedQuote = matchingQuotes.value[activeQuoteIdx.value]
   if (selectedQuote) {
     closeModal()
-    navigateTo(`/quote/${matchingQuotes.value[activeQuoteIdx.value].uuid}`)
+    navigateTo(`/quote/${selectedQuote.uuid}`)
   }
 })
 
