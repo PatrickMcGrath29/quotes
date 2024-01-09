@@ -44,10 +44,10 @@ useSeoMeta({
 <template>
   <Container>
     <div class="flex items-center flex-col my-5">
-      <StyledCard>
-        <QuoteText :quote="selectedQuote" />
+      <StyledCard class="py-8 mt-5">
+        <QuoteText :quote="selectedQuote" large-format />
       </StyledCard>
-      <div class="my-8">
+      <div class="my-10">
         <NuxtLink
           class="btn btn-ghost"
           @click="() => useNavigateBackToPath('/')"
