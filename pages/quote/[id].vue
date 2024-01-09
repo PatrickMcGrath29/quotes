@@ -45,7 +45,7 @@ useSeoMeta({
   <Container>
     <div class="flex items-center flex-col my-5">
       <StyledCard class="py-8 mt-5">
-        <QuoteText :quote="selectedQuote" large-format />
+        <QuoteText :quote="selectedQuote" :large-format="true" />
       </StyledCard>
       <div class="my-10">
         <NuxtLink
