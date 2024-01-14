@@ -1,12 +1,12 @@
 ---
 uuid: 8-xftuiqea
 text: >-
-  For the godly, are not they careless of this duty, [that is, looking unto
-  Jesus]. O their excursions from God! Sad dejections of Spirit! Inordinate
-  affections of the world! And in the meanwhile, O the neglect of this
-  gospel-ordinance even amongst saints themselves! I know not whether through
-  lack of skill, or through lack of will, but sure I am this duty lies dormant,
-  neglected of most of the people of God...
+  Are not they careless of this duty, [that is, looking unto Jesus]. O their
+  excursions from God! Sad dejections of Spirit! Inordinate affections of the
+  world! And in the meanwhile, O the neglect of this gospel-ordinance even
+  amongst saints themselves! I know not whether through lack of skill, or
+  through lack of will, but sure I am this duty lies dormant, neglected of most
+  of the people of God...
 
 
   "I write unto you," saith the apostle "to stir up your pure minds by way of remembrance," (2 Peter 3:1). It is in the original Greek, "to awaken your pure minds," and it was but need. See how David calls upon himself, "Awake, my glory!" (Psalm 57:8). And see how Deborah calls upon herself, "Awake, awake, Deborah, awake, awake, utter a song," (Judges 5:12). Awaking, is a word that imparts rousing, as birds that provoke their young ones by flight, to make use of their wings.
