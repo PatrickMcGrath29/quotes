@@ -70,14 +70,14 @@ onKeyStroke('ArrowUp', (e) => {
   }
 })
 
-onKeyStroke('Enter', () => {
+onKeyStroke('Enter', async () => {
   if (!isFilterSearchModalOpen())
     return
 
   const selectedQuote = matchingQuotes.value[activeQuoteIdx.value]
   if (selectedQuote) {
     closeModal()
-    navigateTo(`/quote/${selectedQuote.uuid}`)
+    await navigateTo(`/quote/${selectedQuote.uuid}`)
   }
 })
 
