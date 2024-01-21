@@ -10,5 +10,6 @@ text: >-
 
   And when He went to Heaven, whom did He send down? The Spirit of love, to come and banish selfishness and envy and pride, and bring the love of God into the hearts of men.
 referenceId: bcx9hafsa4
-categories: []
+categories:
+  - Love
 ---
