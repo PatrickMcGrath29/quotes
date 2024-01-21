@@ -110,7 +110,7 @@ function openModal() {
     </button>
   </div>
   <ClientOnly>
-    <dialog id="filterSearch" class="modal">
+    <dialog id="filterSearch" class="modal transition-none">
       <div class="modal-box max-w-2xl flex flex-col h-full overflow-hidden max-md:w-full max-md:max-h-full max-md:rounded-none">
         <div class="mt-1 mb-4 text-center flex justify-center gap-1 space-x-2">
           <input v-model="searchString" type="text" placeholder="Search" class="input input-md input-bordered input-primary w-full">
