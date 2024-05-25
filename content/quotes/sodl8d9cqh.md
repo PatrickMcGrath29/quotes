@@ -10,5 +10,7 @@ text: >-
 
   He does not expect perfection in the creature, and, therefore, he is not disappointed when he does not find it.
 referenceId: lxut3o7hqc
-categories: []
+categories:
+  - Forgiveness
+  - Humility
 ---
