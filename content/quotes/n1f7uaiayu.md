@@ -14,4 +14,5 @@ text: >
 
 
   We have also to remember, that in one sense we are always in the Church; it is not merely when we assemble together in the Lord’s name, that we then form a part of the church of God; but in private, as well as public, we still belong to that body which the Lord has redeemed with His own blood, and consequently our whole life should have constant reference to our union with all the saints of God.
+referenceId: ugnmfbkh57
 ---
