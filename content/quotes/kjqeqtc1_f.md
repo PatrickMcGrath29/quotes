@@ -1,7 +1,7 @@
 ---
 uuid: kjqeqtc1_f
 text: >-
-  To be a living sacrifice will in move all my time. God wants me to live every
+  To be a living sacrifice will involve all my time. God wants me to live every
   minute for Him in accordance with His will and purpose, sixty minutes of every
   hour, twenty-four hours of every day, being available to Him. No time can be
   considered as my own, or as “off-duty” or “free”. I cannot barter with God
@@ -17,7 +17,7 @@ text: >-
   To be a living sacrifice will involve all of myself. My will and my emotions, my health and vitality, my thinking and activities, all are to be available to God, to be employed as He chooses, to reveal Himself to others. Should He see that someone would be helped to know Him through my being ill, I accept ill health and weakness. I have no right to demand what we call good health… All rights are His — to direct my living so that He can most clearly reveal Himself through me. 
 
 
-  I gladly accept His best will for my life… I need to be so utterly God’s that He can use me or hide me, as He chooses, as an arrow in His hand or on His quiver. I will ask no questions: I relinquish all rights to Him, who desires my supreme good. He knows best.
+  I gladly accept His best will for my life… I need to be so utterly God’s that He can use me or hide me, as He chooses, as an arrow in His hand or in His quiver. I will ask no questions: I relinquish all rights to Him, who desires my supreme good. He knows best.
 referenceId: cxwlhx7gsj
 categories:
   - Consecration
